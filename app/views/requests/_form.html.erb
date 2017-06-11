@@ -1,0 +1,52 @@
+<%= form_for @request do |f| %>
+ 
+  <% if @request.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@request.errors.count, "error") %> prohibited
+        this request from being saved:
+      </h2>
+      <ul>
+        <% @request.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <%= f.label :source %>
+  <%= f.text_field :source %>
+
+  <%= f.label :destination %>
+  <%= f.text_field :destination %>
+
+  <%= f.label "Number of trucks" %>
+  <%= f.number_field :num_trucks %>
+
+  <%= f.label "Service level" %>
+  <%= f.text_field :service_lvl %>
+
+  <%= f.label "Required Date" %>
+  <%= f.date_field :reqd_date %>
+
+  <%= f.label "Source POC - Name" %>
+  <%= f.text_field :poc_src %>
+
+  <%= f.label "Source POC - Email" %>
+  <%= f.email_field :email_src %>
+
+  <%= f.label "Source POC - Phone" %>
+  <%= f.telephone_field :phone_src %>
+
+  <%= f.label "Destination POC - Name" %>
+  <%= f.text_field :poc_dest %>
+
+  <%= f.label "Destination POC - Email" %>
+  <%= f.email_field :email_dest %>
+
+  <%= f.label "Destination POC - Phone" %>
+  <%= f.telephone_field :phone_dest %>
+
+  <%= f.submit %>
+ 
+<% end %>

@@ -3,17 +3,17 @@
     <ul class="dropdown menu" data-dropdown-menu>
 		<li class="menu-text">Effifrei</li>
 		<li><%= link_to "Home", root_path %></li>
-		<% if not admin_signed_in? %>
-			<li><%= link_to "Login", new_admin_session_path %></li>
-			<li><%= link_to "Signup", new_admin_registration_path %></li>
-		<% end %>
     </ul>
   </div>
   <div class="top-bar-right">
     <ul class="dropdown menu" data-dropdown-menu>
 		<% if admin_signed_in? %>
+			<li><%= link_to "Request List", requests_path %></li>
 			<li><%= link_to "Admin List", admins_index_path %></li>
 			<li><%= link_to "Logout", destroy_admin_session_path, :method => :delete %></li>
+		<% else %>
+			<li><%= link_to "Login", new_admin_session_path %></li>
+			<li><%= link_to "Signup", new_admin_registration_path %></li>
 		<% end %>
     </ul>
   </div>

@@ -1,0 +1,49 @@
+<table>
+	<tr>
+		<th>Parameter</th>
+		<th>Value</th>
+	</tr>
+	<tr>
+		<td><b>ID</b></td>
+		<td><%= @request.id %></td>
+	</tr>
+	<tr>
+		<td><b>Source</b></td>
+		<td><%= @request.source %></td>
+	</tr>
+	<tr>
+		<td><b>Destination</b></td>
+		<td><%= @request.destination %></td>
+	</tr>
+	<tr>
+		<td><b>Required Date</b></td>
+		<td><%= @request.reqd_date %></td>
+	</tr>
+	<tr>
+		<td><b>Num. of trucks</b></td>
+		<td><%= @request.num_trucks %></td>
+	</tr>
+	<tr>
+		<td><b>Source PoC</b></td>
+		<td>
+			name: <%= @request.poc_src %><br>
+			email: <%= @request.email_src %><br>
+			phone: <%= @request.phone_src %>
+		</td>
+	</tr>
+	<tr>
+		<td><b>Destination PoC</b></td>
+		<td>
+			name: <%= @request.poc_dest %><br>
+			email: <%= @request.email_dest %><br>
+			phone: <%= @request.phone_dest %>
+		</td>
+	</tr>
+	<tr>
+		<td><b>Service Level</b></td>
+		<td><%= @request.service_lvl %></td>
+	</tr>
+</table>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

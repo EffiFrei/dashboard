@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  num_trucks: 1
+  source: MyString
+  destination: MyString
+  poc_src: MyString
+  poc_dest: MyString
+  phone_src: 1
+  phone_dest: 1
+  email_src: MyString
+  email_dest: MyString
+  reqd_date: 2017-06-11 13:21:36
+  service_lvl: MyString
+
+two:
+  num_trucks: 1
+  source: MyString
+  destination: MyString
+  poc_src: MyString
+  poc_dest: MyString
+  phone_src: 1
+  phone_dest: 1
+  email_src: MyString
+  email_dest: MyString
+  reqd_date: 2017-06-11 13:21:36
+  service_lvl: MyString
