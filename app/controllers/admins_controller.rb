@@ -6,4 +6,12 @@ class AdminsController < ApplicationController
 			render "static_pages/home"
 		end
 	end
+
+	def dashboard
+		@drivers = Driver.all
+	    @trucks = Truck.all
+	    @requests = Request.all
+	    @shippers = Shipper.all
+	    @carriers = Carrier.all
+	end
 end

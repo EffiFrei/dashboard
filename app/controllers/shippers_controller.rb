@@ -12,6 +12,10 @@ class ShippersController < ApplicationController
   def show
   end
 
+  def dashboard
+    @requests = Request.all
+  end
+
   # GET /shippers/new
   def new
     @shipper = Shipper.new
