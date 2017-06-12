@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trucks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Registration num</th>
+      <!-- <th>Engine num</th> -->
+      <!-- <th>Chasis num</th> -->
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Load capacity</th>
+      <!-- <th>Load height</th> -->
+      <!-- <th>Load width</th> -->
+      <!-- <th>Load base length</th> -->
+      <!-- <th>Registration auth</th> -->
+      <!-- <th>Fitness</th> -->
+      <!-- <th>Purchase date</th> -->
+      <!-- <th>Insurer</th> -->
+      <!-- <th>Policy num</th> -->
+      <!-- <th>Insurance expiry</th> -->
+      <!-- <th>Permit expiry</th> -->
+      <!-- <th>Gross vehicle weight</th> -->
+      <!-- <th>Unloaded weight</th> -->
+      <th>Body type</th>
+      <!-- <th>Current location</th> -->
+      <!-- <th>Current status</th> -->
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trucks.each do |truck| %>
+      <tr>
+        <td><%= truck.registration_num %></td>
+        <!-- <td><%= truck.engine_num %></td> -->
+        <!-- <td><%= truck.chasis_num %></td> -->
+        <td><%= truck.manufacturer %></td>
+        <td><%= truck.model %></td>
+        <td><%= truck.load_capacity %></td>
+        <!-- <td><%= truck.load_height %></td> -->
+        <!-- <td><%= truck.load_width %></td> -->
+        <!-- <td><%= truck.load_base_length %></td> -->
+        <!-- <td><%= truck.registration_auth %></td> -->
+        <!-- <td><%= truck.fitness %></td> -->
+        <!-- <td><%= truck.purchase_date %></td> -->
+        <!-- <td><%= truck.insurer %></td> -->
+        <!-- <td><%= truck.policy_num %></td> -->
+        <!-- <td><%= truck.insurance_expiry %></td> -->
+        <!-- <td><%= truck.permit_expiry %></td> -->
+        <!-- <td><%= truck.gross_vehicle_weight %></td> -->
+        <!-- <td><%= truck.unloaded_weight %></td> -->
+        <td><%= truck.body_type %></td>
+        <!-- <td><%= truck.current_location %></td> -->
+        <!-- <td><%= truck.current_status %></td> -->
+        <td><%= link_to 'Show', truck, class: "button" %>
+        <%= link_to 'Edit', edit_truck_path(truck), class: "warning button" %>
+        <%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' }, class: "alert button" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Truck', new_truck_path, class: "button" %>

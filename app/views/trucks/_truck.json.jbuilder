@@ -1,0 +1,2 @@
+json.extract! truck, :id, :registration_num, :engine_num, :chasis_num, :manufacturer, :model, :load_capacity, :load_height, :load_width, :load_base_length, :registration_auth, :fitness, :purchase_date, :insurer, :policy_num, :insurance_expiry, :permit_expiry, :gross_vehicle_weight, :unloaded_weight, :body_type, :current_location, :current_status, :created_at, :updated_at
+json.url truck_url(truck, format: :json)

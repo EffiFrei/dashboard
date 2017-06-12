@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170611075136) do
+ActiveRecord::Schema.define(version: 20170612033126) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -41,6 +41,32 @@ ActiveRecord::Schema.define(version: 20170611075136) do
     t.string "email_dest"
     t.datetime "reqd_date"
     t.string "service_lvl"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trucks", force: :cascade do |t|
+    t.string "registration_num"
+    t.string "engine_num"
+    t.string "chasis_num"
+    t.string "manufacturer"
+    t.string "model"
+    t.integer "load_capacity"
+    t.integer "load_height"
+    t.integer "load_width"
+    t.integer "load_base_length"
+    t.string "registration_auth"
+    t.string "fitness"
+    t.datetime "purchase_date"
+    t.string "insurer"
+    t.string "policy_num"
+    t.datetime "insurance_expiry"
+    t.datetime "permit_expiry"
+    t.integer "gross_vehicle_weight"
+    t.integer "unloaded_weight"
+    t.string "body_type"
+    t.string "current_location"
+    t.string "current_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

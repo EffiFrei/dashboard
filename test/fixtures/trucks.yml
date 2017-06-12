@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  registration_num: MyString
+  engine_num: MyString
+  chasis_num: MyString
+  manufacturer: MyString
+  model: MyString
+  load_capacity: 1
+  load_height: 1
+  load_width: 1
+  load_base_length: 1
+  registration_auth: MyString
+  fitness: MyString
+  purchase_date: 2017-06-12 09:01:26
+  insurer: MyString
+  policy_num: MyString
+  insurance_expiry: 2017-06-12 09:01:26
+  permit_expiry: 2017-06-12 09:01:26
+  gross_vehicle_weight: 1
+  unloaded_weight: 1
+  body_type: MyString
+  current_location: MyString
+  current_status: MyString
+
+two:
+  registration_num: MyString
+  engine_num: MyString
+  chasis_num: MyString
+  manufacturer: MyString
+  model: MyString
+  load_capacity: 1
+  load_height: 1
+  load_width: 1
+  load_base_length: 1
+  registration_auth: MyString
+  fitness: MyString
+  purchase_date: 2017-06-12 09:01:26
+  insurer: MyString
+  policy_num: MyString
+  insurance_expiry: 2017-06-12 09:01:26
+  permit_expiry: 2017-06-12 09:01:26
+  gross_vehicle_weight: 1
+  unloaded_weight: 1
+  body_type: MyString
+  current_location: MyString
+  current_status: MyString

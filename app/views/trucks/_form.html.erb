@@ -1,0 +1,122 @@
+<%= form_with(model: truck, local: true) do |form| %>
+  <% if truck.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(truck.errors.count, "error") %> prohibited this truck from being saved:</h2>
+
+      <ul>
+      <% truck.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :registration_num %>
+    <%= form.text_field :registration_num, id: :truck_registration_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :engine_num %>
+    <%= form.text_field :engine_num, id: :truck_engine_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :chasis_num %>
+    <%= form.text_field :chasis_num, id: :truck_chasis_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :manufacturer %>
+    <%= form.text_field :manufacturer, id: :truck_manufacturer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model, id: :truck_model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :load_capacity %>
+    <%= form.number_field :load_capacity, id: :truck_load_capacity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :load_height %>
+    <%= form.number_field :load_height, id: :truck_load_height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :load_width %>
+    <%= form.number_field :load_width, id: :truck_load_width %>
+  </div>
+
+  <div class="field">
+    <%= form.label :load_base_length %>
+    <%= form.number_field :load_base_length, id: :truck_load_base_length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :registration_auth %>
+    <%= form.text_field :registration_auth, id: :truck_registration_auth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fitness %>
+    <%= form.text_field :fitness, id: :truck_fitness %>
+  </div>
+
+  <div class="field">
+    <%= form.label :purchase_date %>
+    <%= form.datetime_select :purchase_date, id: :truck_purchase_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :insurer %>
+    <%= form.text_field :insurer, id: :truck_insurer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :policy_num %>
+    <%= form.text_field :policy_num, id: :truck_policy_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :insurance_expiry %>
+    <%= form.datetime_select :insurance_expiry, id: :truck_insurance_expiry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :permit_expiry %>
+    <%= form.datetime_select :permit_expiry, id: :truck_permit_expiry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gross_vehicle_weight %>
+    <%= form.number_field :gross_vehicle_weight, id: :truck_gross_vehicle_weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unloaded_weight %>
+    <%= form.number_field :unloaded_weight, id: :truck_unloaded_weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body_type %>
+    <%= form.text_field :body_type, id: :truck_body_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_location %>
+    <%= form.text_field :current_location, id: :truck_current_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_status %>
+    <%= form.text_field :current_status, id: :truck_current_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

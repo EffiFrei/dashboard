@@ -1,0 +1,115 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+<tr>
+  <th>Parameter</th>
+  <th>Value</th>
+</tr>
+<tr>
+  <td>Registration num:</td>
+  <td><%= @truck.registration_num %></td>
+</tr>
+
+<tr>
+  <td>Engine num:</td>
+  <td><%= @truck.engine_num %></td>
+</tr>
+
+<tr>
+  <td>Chasis num:</td>
+  <td><%= @truck.chasis_num %></td>
+</tr>
+
+<tr>
+  <td>Manufacturer:</td>
+  <td><%= @truck.manufacturer %></td>
+</tr>
+
+<tr>
+  <td>Model:</td>
+  <td><%= @truck.model %></td>
+</tr>
+
+<tr>
+  <td>Load capacity:</td>
+  <td><%= @truck.load_capacity %></td>
+</tr>
+
+<tr>
+  <td>Load height:</td>
+  <td><%= @truck.load_height %></td>
+</tr>
+
+<tr>
+  <td>Load width:</td>
+  <td><%= @truck.load_width %></td>
+</tr>
+
+<tr>
+  <td>Load base length:</td>
+  <td><%= @truck.load_base_length %></td>
+</tr>
+
+<tr>
+  <td>Registration auth:</td>
+  <td><%= @truck.registration_auth %></td>
+</tr>
+
+<tr>
+  <td>Fitness:</td>
+  <td><%= @truck.fitness %></td>
+</tr>
+
+<tr>
+  <td>Purchase date:</td>
+  <td><%= @truck.purchase_date %></td>
+</tr>
+
+<tr>
+  <td>Insurer:</td>
+  <td><%= @truck.insurer %></td>
+</tr>
+
+<tr>
+  <td>Policy num:</td>
+  <td><%= @truck.policy_num %></td>
+</tr>
+
+<tr>
+  <td>Insurance expiry:</td>
+  <td><%= @truck.insurance_expiry %></td>
+</tr>
+
+<tr>
+  <td>Permit expiry:</td>
+  <td><%= @truck.permit_expiry %></td>
+</tr>
+
+<tr>
+  <td>Gross vehicle weight:</td>
+  <td><%= @truck.gross_vehicle_weight %></td>
+</tr>
+
+<tr>
+  <td>Unloaded weight:</td>
+  <td><%= @truck.unloaded_weight %></td>
+</tr>
+
+<tr>
+  <td>Body type:</td>
+  <td><%= @truck.body_type %></td>
+</tr>
+
+<tr>
+  <td>Current location:</td>
+  <td><%= @truck.current_location %></td>
+</tr>
+
+<tr>
+  <td>Current status:</td>
+  <td><%= @truck.current_status %></td>
+</tr>
+</table>
+
+<%= link_to 'Edit', edit_truck_path(@truck), class: "button" %>
+<%= link_to 'Back', trucks_path, class: "button" %>
