@@ -1,0 +1,77 @@
+<%= form_with(model: carrier, local: true) do |form| %>
+  <% if carrier.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(carrier.errors.count, "error") %> prohibited this carrier from being saved:</h2>
+
+      <ul>
+      <% carrier.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :carrier_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :PoC %>
+    <%= form.text_field :PoC, id: :carrier_PoC %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_area :address, id: :carrier_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :carrier_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :carrier_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reg_date %>
+    <%= form.datetime_select :reg_date, id: :carrier_reg_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :owner_name %>
+    <%= form.text_field :owner_name, id: :carrier_owner_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :org_type %>
+    <%= form.text_field :org_type, id: :carrier_org_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :PAN %>
+    <%= form.text_field :PAN, id: :carrier_PAN %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ST_num %>
+    <%= form.text_field :ST_num, id: :carrier_ST_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :incorporation_date %>
+    <%= form.datetime_select :incorporation_date, id: :carrier_incorporation_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :CIN %>
+    <%= form.text_field :CIN, id: :carrier_CIN %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  PoC: MyString
+  address: MyText
+  phone: MyString
+  email: MyString
+  reg_date: 2017-06-12 10:29:55
+  owner_name: MyString
+  org_type: MyString
+  PAN: MyString
+  ST_num: MyString
+  incorporation_date: 2017-06-12 10:29:55
+  CIN: MyString
+
+two:
+  name: MyString
+  PoC: MyString
+  address: MyText
+  phone: MyString
+  email: MyString
+  reg_date: 2017-06-12 10:29:55
+  owner_name: MyString
+  org_type: MyString
+  PAN: MyString
+  ST_num: MyString
+  incorporation_date: 2017-06-12 10:29:55
+  CIN: MyString
