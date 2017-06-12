@@ -8,6 +8,7 @@
   <div class="top-bar-right">
     <ul class="dropdown menu" data-dropdown-menu>
 		<% if admin_signed_in? %>
+			<li><%= link_to "Shippers List", shippers_path %></li>
 			<li><%= link_to "Carriers List", carriers_path %></li>
 			<li><%= link_to "Drivers List", drivers_path %></li>
 			<li><%= link_to "Trucks List", trucks_path %></li>

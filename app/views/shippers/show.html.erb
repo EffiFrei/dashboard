@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+<tr>
+  <th>Parameter</th>
+  <th>Value</th>
+</tr>
+<tr>
+  <td><strong>Name:</strong></td>
+  <td><%= @shipper.name %></td>
+</tr>
+
+<tr>
+  <td><strong>Address:</strong></td>
+  <td><%= @shipper.address %></td>
+</tr>
+
+<tr>
+  <td><strong>Poc:</strong></td>
+  <td><%= @shipper.poc %></td>
+</tr>
+
+<tr>
+  <td><strong>Email:</strong></td>
+  <td><%= @shipper.email %></td>
+</tr>
+
+<tr>
+  <td><strong>Phone:</strong></td>
+  <td><%= @shipper.phone %></td>
+</tr>
+
+<tr>
+  <td><strong>Org type:</strong></td>
+  <td><%= @shipper.org_type %></td>
+</tr>
+
+<tr>
+  <td><strong>Pan:</strong></td>
+  <td><%= @shipper.PAN %></td>
+</tr>
+
+<tr>
+  <td><strong>St num:</strong></td>
+  <td><%= @shipper.ST_num %></td>
+</tr>
+
+<tr>
+  <td><strong>Cin:</strong></td>
+  <td><%= @shipper.CIN %></td>
+</tr>
+
+<tr>
+  <td><strong>Reg date:</strong></td>
+  <td><%= @shipper.reg_date %></td>
+</tr>
+</table>
+
+<%= link_to 'Edit', edit_shipper_path(@shipper), class: "button" %>
+<%= link_to 'Back', shippers_path, class: "button" %>

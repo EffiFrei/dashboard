@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shippers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Poc</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <!-- <th>Org type</th> -->
+      <!-- <th>Pan</th> -->
+      <!-- <th>St num</th> -->
+      <!-- <th>Cin</th> -->
+      <!-- <th>Reg date</th> -->
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shippers.each do |shipper| %>
+      <tr>
+        <td><%= shipper.name %></td>
+        <td><%= shipper.address %></td>
+        <td><%= shipper.poc %></td>
+        <td><%= shipper.email %></td>
+        <td><%= shipper.phone %></td>
+        <!-- <td><%= shipper.org_type %></td> -->
+        <!-- <td><%= shipper.PAN %></td> -->
+        <!-- <td><%= shipper.ST_num %></td> -->
+        <!-- <td><%= shipper.CIN %></td> -->
+        <!-- <td><%= shipper.reg_date %></td> -->
+        <td><%= link_to 'Show', shipper, class: "button" %></td>
+        <td><%= link_to 'Edit', edit_shipper_path(shipper), class: "warning button" %></td>
+        <td><%= link_to 'Destroy', shipper, method: :delete, data: { confirm: 'Are you sure?' }, class: "alert button" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shipper', new_shipper_path, class: "button" %>

@@ -1,0 +1,67 @@
+<%= form_with(model: shipper, local: true) do |form| %>
+  <% if shipper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shipper.errors.count, "error") %> prohibited this shipper from being saved:</h2>
+
+      <ul>
+      <% shipper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :shipper_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :shipper_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poc %>
+    <%= form.text_field :poc, id: :shipper_poc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :shipper_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :shipper_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :org_type %>
+    <%= form.text_field :org_type, id: :shipper_org_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :PAN %>
+    <%= form.text_field :PAN, id: :shipper_PAN %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ST_num %>
+    <%= form.text_field :ST_num, id: :shipper_ST_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :CIN %>
+    <%= form.text_field :CIN, id: :shipper_CIN %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reg_date %>
+    <%= form.text_field :reg_date, id: :shipper_reg_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
