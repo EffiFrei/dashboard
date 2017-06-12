@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :shippers
+  devise_for :carriers
+  devise_for :drivers
   resources :shippers
   resources :carriers
   resources :drivers

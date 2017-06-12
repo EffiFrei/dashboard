@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170612085508) do
+ActiveRecord::Schema.define(version: 20170612095104) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170612085508) do
     t.string "PoC"
     t.text "address"
     t.string "phone"
-    t.string "email"
+    t.string "email", default: "", null: false
     t.datetime "reg_date"
     t.string "owner_name"
     t.string "org_type"
@@ -44,6 +44,17 @@ ActiveRecord::Schema.define(version: 20170612085508) do
     t.string "CIN"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.index ["email"], name: "index_carriers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_carriers_on_reset_password_token", unique: true
   end
 
   create_table "drivers", force: :cascade do |t|
@@ -56,6 +67,18 @@ ActiveRecord::Schema.define(version: 20170612085508) do
     t.datetime "DL_expiry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.index ["email"], name: "index_drivers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_drivers_on_reset_password_token", unique: true
   end
 
   create_table "requests", force: :cascade do |t|
@@ -78,7 +101,7 @@ ActiveRecord::Schema.define(version: 20170612085508) do
     t.string "name"
     t.string "address"
     t.string "poc"
-    t.string "email"
+    t.string "email", default: "", null: false
     t.string "phone"
     t.string "org_type"
     t.string "PAN"
@@ -87,6 +110,17 @@ ActiveRecord::Schema.define(version: 20170612085508) do
     t.datetime "reg_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.index ["email"], name: "index_shippers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_shippers_on_reset_password_token", unique: true
   end
 
   create_table "trucks", force: :cascade do |t|
