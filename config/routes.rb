@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :drivers
   resources :trucks
   devise_for :admins
   get 'static_pages/home'

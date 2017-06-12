@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  DL: MyString
+  DL_issue_date: 2017-06-12 10:14:57
+  name: MyString
+  adress: MyText
+  DOB: 2017-06-12 10:14:57
+  blood_group: MyString
+  DL_expiry: 2017-06-12 10:14:57
+
+two:
+  DL: MyString
+  DL_issue_date: 2017-06-12 10:14:57
+  name: MyString
+  adress: MyText
+  DOB: 2017-06-12 10:14:57
+  blood_group: MyString
+  DL_expiry: 2017-06-12 10:14:57

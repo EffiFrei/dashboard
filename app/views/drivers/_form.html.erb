@@ -1,0 +1,52 @@
+<%= form_with(model: driver, local: true) do |form| %>
+  <% if driver.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(driver.errors.count, "error") %> prohibited this driver from being saved:</h2>
+
+      <ul>
+      <% driver.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "DL" %>
+    <%= form.text_field :DL, id: :driver_DL %>
+  </div>
+
+  <div class="field">
+    <%= form.label "DL_issue_date" %>
+    <%= form.datetime_select :DL_issue_date, id: :driver_DL_issue_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :driver_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :adress %>
+    <%= form.text_area :adress, id: :driver_adress %>
+  </div>
+
+  <div class="field">
+    <%= form.label :DOB %>
+    <%= form.datetime_select :DOB, id: :driver_DOB %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Blood Group" %>
+    <%= form.text_field :blood_group, id: :driver_blood_group %>
+  </div>
+
+  <div class="field">
+    <%= form.label "DL_expiry" %>
+    <%= form.datetime_select :DL_expiry, id: :driver_DL_expiry %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

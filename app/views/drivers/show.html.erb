@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+<tr>
+  <th>Parameter</th>
+  <th>Value</th>
+</tr>
+<tr>
+  <td><strong>DL:</strong></td>
+  <td><%= @driver.DL %></td>
+</tr>
+
+<tr>
+  <td><strong>DL issue date:</strong></td>
+  <td><%= @driver.DL_issue_date %></td>
+</tr>
+
+<tr>
+  <td><strong>Name:</strong></td>
+  <td><%= @driver.name %></td>
+</tr>
+
+<tr>
+  <td><strong>Adress:</strong></td>
+  <td><%= @driver.adress %></td>
+</tr>
+
+<tr>
+  <td><strong>Dob:</strong></td>
+  <td><%= @driver.DOB %></td>
+</tr>
+
+<tr>
+  <td><strong>Blood group:</strong></td>
+  <td><%= @driver.blood_group %></td>
+</tr>
+
+<tr>
+  <td><strong>DL expiry:</strong></td>
+  <td><%= @driver.DL_expiry %></td>
+</tr>
+</table>
+
+<%= link_to 'Edit', edit_driver_path(@driver), class: "button" %>
+<%= link_to 'Back', drivers_path, class: "button" %>
