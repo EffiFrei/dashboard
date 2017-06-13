@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :drivers
   
   devise_for :admins
+  resources :admins
   get 'admin_dash', to: 'admins#dashboard'
   get 'admins/index'
   

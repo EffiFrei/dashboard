@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+	<tr>
+		<th>Parameter</th>
+		<th>Value</th>
+	</tr>
+	<tr>
+		<td><b>Email</b></td>
+		<td><%= current_admin.email %></td>
+	</tr>
+</table>
+
+<%= link_to 'Edit', edit_admin_path(current_admin), class: "button" %>
+<%= link_to 'Back', admin_dash_path, class: "button" %>
