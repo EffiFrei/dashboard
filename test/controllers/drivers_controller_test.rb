@@ -3,6 +3,7 @@ require 'test_helper'
 class DriversControllerTest < ActionDispatch::IntegrationTest
   setup do
     @driver = drivers(:one)
+    @admin = FactoryGirl.create(:admin)
   end
 
   test "should get index" do
@@ -39,6 +40,7 @@ class DriversControllerTest < ActionDispatch::IntegrationTest
   # end
 
   test "should destroy driver" do
+    login_as(@admin, :scope => :admin)
     assert_difference('Driver.count', -1) do
       delete driver_url(@driver)
     end

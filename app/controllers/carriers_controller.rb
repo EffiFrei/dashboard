@@ -1,5 +1,6 @@
 class CarriersController < ApplicationController
   before_action :set_carrier, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_admin, only: [:index, :new, :create, :destroy]
 
   # GET /carriers
   # GET /carriers.json

@@ -1,10 +1,8 @@
 class AdminsController < ApplicationController
+  before_action :logged_in_admin
+
 	def index
-		if admin_signed_in?
-			@admins = Admin.all
-		else
-			render "static_pages/home"
-		end
+		@admins = Admin.all
 	end
 
 	def edit
@@ -31,15 +29,9 @@ class AdminsController < ApplicationController
     @trucks = Truck.all
     @requests = Request.all
     @shippers = Shipper.all
-    current_admins = Admin.all
 	end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_admin
-      @admin = Admin.find(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_params
       params.require(:admin).permit(:email)

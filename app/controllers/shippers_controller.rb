@@ -1,5 +1,6 @@
 class ShippersController < ApplicationController
   before_action :set_shipper, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_admin, only: [:index, :new, :create, :destroy]
 
   # GET /shippers
   # GET /shippers.json

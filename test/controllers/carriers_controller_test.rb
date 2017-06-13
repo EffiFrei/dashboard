@@ -3,14 +3,17 @@ require 'test_helper'
 class CarriersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @carrier = carriers(:one)
+    @admin = FactoryGirl.create(:admin)
   end
 
   test "should get index" do
+    login_as(@admin, :scope => :admin)
     get carriers_url
     assert_response :success
   end
 
   test "should get new" do
+    login_as(@admin, :scope => :admin)
     get new_carrier_url
     assert_response :success
   end
@@ -39,6 +42,7 @@ class CarriersControllerTest < ActionDispatch::IntegrationTest
   # end
 
   test "should destroy carrier" do
+    login_as(@admin, :scope => :admin)
     assert_difference('Carrier.count', -1) do
       delete carrier_url(@carrier)
     end

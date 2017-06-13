@@ -3,14 +3,17 @@ require 'test_helper'
 class ShippersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @shipper = shippers(:one)
+    @admin = FactoryGirl.create(:admin)
   end
 
   test "should get index" do
+    login_as(@admin, :scope => :admin)
     get shippers_url
     assert_response :success
   end
 
   test "should get new" do
+    login_as(@admin, :scope => :admin)
     get new_shipper_url
     assert_response :success
   end
@@ -39,6 +42,7 @@ class ShippersControllerTest < ActionDispatch::IntegrationTest
   # end
 
   test "should destroy shipper" do
+    login_as(@admin, :scope => :admin)
     assert_difference('Shipper.count', -1) do
       delete shipper_url(@shipper)
     end
