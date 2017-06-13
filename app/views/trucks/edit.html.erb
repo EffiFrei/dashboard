@@ -1,4 +1,82 @@
 <h1>Editing Truck</h1>
-Not working!
+
+<%= form_for @truck, url: carrier_truck_path(current_carrier, @truck), method: :patch do |form| %>
+  
+  <div class="row">
+    <div class="medium-2 columns">
+      <%= form.label :registration_num %>
+      <%= form.text_field :registration_num, id: :truck_registration_num %>
+
+      <%= form.label :engine_num %>
+      <%= form.text_field :engine_num, id: :truck_engine_num %>
+
+      <%= form.label :chasis_num %>
+      <%= form.text_field :chasis_num, id: :truck_chasis_num %>
+
+      <%= form.label :manufacturer %>
+      <%= form.text_field :manufacturer, id: :truck_manufacturer %>
+
+      <%= form.label :model %>
+      <%= form.text_field :model, id: :truck_model %>
+    </div>
+    <div class="medium-2 columns">
+      <%= form.label :load_capacity %>
+      <%= form.number_field :load_capacity, id: :truck_load_capacity %>
+
+      <%= form.label :load_height %>
+      <%= form.number_field :load_height, id: :truck_load_height %>
+
+      <%= form.label :load_width %>
+      <%= form.number_field :load_width, id: :truck_load_width %>
+
+      <%= form.label :load_base_length %>
+      <%= form.number_field :load_base_length, id: :truck_load_base_length %>
+    </div>
+    <div class="medium-3 columns">
+      <%= form.label :insurer %>
+      <%= form.text_field :insurer, id: :truck_insurer %>
+
+      <%= form.label :policy_num %>
+      <%= form.text_field :policy_num, id: :truck_policy_num %>
+
+      <%= form.label :insurance_expiry %>
+      <%= form.date_select :insurance_expiry, id: :truck_insurance_expiry %>
+    </div>
+    <div class="medium-2 columns">
+      <%= form.label :gross_vehicle_weight %>
+      <%= form.number_field :gross_vehicle_weight, id: :truck_gross_vehicle_weight %>
+
+      <%= form.label :unloaded_weight %>
+      <%= form.number_field :unloaded_weight, id: :truck_unloaded_weight %>
+      <%= form.label :current_location %>
+      <%= form.text_field :current_location, id: :truck_current_location %>
+
+      <%= form.label :current_status %>
+      <%= form.text_field :current_status, id: :truck_current_status %>
+    </div>
+    <div class="medium-3 columns">
+      <%= form.label :registration_auth %>
+      <%= form.text_field :registration_auth, id: :truck_registration_auth %>
+
+      <%= form.label :fitness %>
+      <%= form.text_field :fitness, id: :truck_fitness %>
+
+      <%= form.label :purchase_date %>
+      <%= form.date_select :purchase_date, id: :truck_purchase_date %>
+
+      <%= form.label :permit_expiry %>
+      <%= form.date_select :permit_expiry, id: :truck_permit_expiry %>
+
+      <%= form.label :body_type %>
+      <%= form.text_field :body_type, id: :truck_body_type %>
+    </div>
+    <div class="actions columns">
+        <%= form.submit %>
+    </div>
+    <br>
+  </div>
+
+<% end %>
 
 <%= link_to 'Show', carrier_truck_path(current_carrier, @truck), class: "button" %>
+<%= link_to 'Back', carrier_dash_path, class: "button" %>

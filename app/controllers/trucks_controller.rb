@@ -24,8 +24,7 @@ class TrucksController < ApplicationController
   # POST /trucks
   # POST /trucks.json
   def create
-    @carrier = Carrier.find(params[:carrier_id])
-    @truck = @carrier.trucks.create(truck_params)
+    @truck = current_carrier.trucks.create(truck_params)
 
     respond_to do |format|
       if @truck.save
@@ -65,8 +64,7 @@ class TrucksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_truck
-      # @carrier = Carrier.find(params[:carrier_id])
-      @truck = Truck.find(params[:id])
+      @truck = current_carrier.trucks.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
