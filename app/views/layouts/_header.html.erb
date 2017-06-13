@@ -5,8 +5,10 @@
 		<li><%= link_to "Home", root_path %></li>
 		<% if carrier_signed_in? %>
 			<li><%= link_to "Dashboard", carrier_dash_path %></li>
+			<li><%= link_to "Profile", carrier_path(current_carrier) %></li>
 		<% elsif shipper_signed_in? %>
 			<li><%= link_to "Dashboard", shipper_dash_path %></li>
+			<li><%= link_to "Profile", shipper_path(current_shipper) %></li>
 		<% elsif admin_signed_in? %>
 			<li><%= link_to "Dashboard", admin_dash_path %></li>
 		<% end %>
