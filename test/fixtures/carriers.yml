@@ -19,7 +19,7 @@ two:
   PoC: MyString
   address: MyText
   phone: MyString
-  email: MyString
+  email: MyString2
   reg_date: 2017-06-12 10:29:55
   owner_name: MyString
   org_type: MyString

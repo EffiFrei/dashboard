@@ -16,7 +16,7 @@ two:
   name: MyString
   address: MyString
   poc: MyString
-  email: MyString
+  email: MyString2
   phone: MyString
   org_type: MyString
   PAN: MyString

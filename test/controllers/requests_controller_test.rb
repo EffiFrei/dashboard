@@ -1,29 +1,35 @@
 require 'test_helper'
 
 class RequestsControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @request = requests(:one)
+  end
+
   test "should get new" do
-    get requests_new_url
+    get new_request_url
     assert_response :success
   end
 
   test "should get index" do
-    get requests_index_url
+    get requests_url
     assert_response :success
   end
 
   test "should get show" do
-    get requests_show_url
+    get request_url(@request)
     assert_response :success
   end
 
   test "should get edit" do
-    get requests_edit_url
+    get edit_request_url(@request)
     assert_response :success
   end
 
   test "should get destroy" do
-    get requests_destroy_url
-    assert_response :success
+    assert_difference('Request.count', -1) do
+      delete request_url(@request)
+    end
+    assert_redirected_to requests_url
   end
 
 end

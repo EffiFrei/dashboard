@@ -8,6 +8,7 @@ one:
   DOB: 2017-06-12 10:14:57
   blood_group: MyString
   DL_expiry: 2017-06-12 10:14:57
+  email: MyString
 
 two:
   DL: MyString
@@ -17,3 +18,4 @@ two:
   DOB: 2017-06-12 10:14:57
   blood_group: MyString
   DL_expiry: 2017-06-12 10:14:57
+  email: MyString2
