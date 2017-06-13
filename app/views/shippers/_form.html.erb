@@ -11,42 +11,54 @@
     </div>
   <% end %>
 
-  <div class="row">
-    <div class="medium-6 columns">
-      <h4>Company Details</h4>
-      <%= form.label :name, "Name of the Company" %>
-      <%= form.text_field :name, id: :shipper_name %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :shipper_name %>
+  </div>
 
-      <%= form.label :address %>
-      <%= form.text_field :address, id: :shipper_address %>
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :shipper_address %>
+  </div>
 
-      <%= form.label :org_type, "Organisation Type" %>
-      <%= form.text_field :org_type, id: :shipper_org_type %>
+  <div class="field">
+    <%= form.label :poc %>
+    <%= form.text_field :poc, id: :shipper_poc %>
+  </div>
 
-      <%= form.label :PAN, "PAN" %>
-      <%= form.text_field :PAN, id: :shipper_PAN %>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :shipper_email %>
+  </div>
 
-      <%= form.label :ST_num, "Service Tax No." %>
-      <%= form.text_field :ST_num, id: :shipper_ST_num %>
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :shipper_phone %>
+  </div>
 
-      <%= form.label :CIN, "CIN" %>
-      <%= form.text_field :CIN, id: :shipper_CIN %>
+  <div class="field">
+    <%= form.label :org_type %>
+    <%= form.text_field :org_type, id: :shipper_org_type %>
+  </div>
 
-      <%= form.label :reg_date, "Registration Date" %>
-      <%= form.date_select :reg_date, id: :shipper_reg_date %>
-    </div>
+  <div class="field">
+    <%= form.label :PAN %>
+    <%= form.text_field :PAN, id: :shipper_PAN %>
+  </div>
 
-    <div class="medium-6 columns">
-      <h4>Point of Contact</h4>
-      <%= form.label :poc, "Name" %>
-      <%= form.text_field :poc, id: :shipper_poc %>
+  <div class="field">
+    <%= form.label :ST_num %>
+    <%= form.text_field :ST_num, id: :shipper_ST_num %>
+  </div>
 
-      <%= form.label :email %>
-      <%= form.text_field :email, id: :shipper_email, disabled: :disabled %>
+  <div class="field">
+    <%= form.label :CIN %>
+    <%= form.text_field :CIN, id: :shipper_CIN %>
+  </div>
 
-      <%= form.label :phone %>
-      <%= form.text_field :phone, id: :shipper_phone %>
-    </div>
+  <div class="field">
+    <%= form.label :reg_date %>
+    <%= form.datetime_select :reg_date, id: :shipper_reg_date %>
   </div>
 
   <div class="actions">
