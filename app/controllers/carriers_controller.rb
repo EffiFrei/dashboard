@@ -14,7 +14,8 @@ class CarriersController < ApplicationController
 
   def dashboard
     @drivers = Driver.all
-    @trucks = Truck.all
+    # @trucks = Truck.all
+    # @carrier = current_carrier
     @requests = Request.all
   end
 

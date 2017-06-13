@@ -1,6 +1,4 @@
 <h1>Editing Truck</h1>
+Not working!
 
-<%= render 'form', truck: @truck %>
-
-<%= link_to 'Show', @truck, class: "button" %>
-<%= link_to 'Back', trucks_path, class: "button" %>
+<%= link_to 'Show', carrier_truck_path(current_carrier, @truck), class: "button" %>

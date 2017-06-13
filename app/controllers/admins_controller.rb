@@ -8,10 +8,11 @@ class AdminsController < ApplicationController
 	end
 
 	def dashboard
+		@admins = Admin.all
 		@drivers = Driver.all
-	    @trucks = Truck.all
-	    @requests = Request.all
-	    @shippers = Shipper.all
-	    @carriers = Carrier.all
+    @trucks = Truck.all
+    @requests = Request.all
+    @shippers = Shipper.all
+    @carriers = Carrier.all
 	end
 end

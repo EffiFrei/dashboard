@@ -24,11 +24,12 @@ class TrucksController < ApplicationController
   # POST /trucks
   # POST /trucks.json
   def create
-    @truck = Truck.new(truck_params)
+    @carrier = Carrier.find(params[:carrier_id])
+    @truck = @carrier.trucks.create(truck_params)
 
     respond_to do |format|
       if @truck.save
-        format.html { redirect_to @truck, notice: 'Truck was successfully created.' }
+        format.html { redirect_to carrier_dash_path, notice: 'Truck was successfully created.' }
         format.json { render :show, status: :created, location: @truck }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class TrucksController < ApplicationController
   def update
     respond_to do |format|
       if @truck.update(truck_params)
-        format.html { redirect_to @truck, notice: 'Truck was successfully updated.' }
+        format.html { redirect_to carrier_dash_path, notice: 'Truck was successfully updated.' }
         format.json { render :show, status: :ok, location: @truck }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class TrucksController < ApplicationController
   def destroy
     @truck.destroy
     respond_to do |format|
-      format.html { redirect_to trucks_url, notice: 'Truck was successfully destroyed.' }
+      format.html { redirect_to carrier_dash_path, notice: 'Truck was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +65,33 @@ class TrucksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_truck
+      # @carrier = Carrier.find(params[:carrier_id])
       @truck = Truck.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def truck_params
-      params.require(:truck).permit(:registration_num, :engine_num, :chasis_num, :manufacturer, :model, :load_capacity, :load_height, :load_width, :load_base_length, :registration_auth, :fitness, :purchase_date, :insurer, :policy_num, :insurance_expiry, :permit_expiry, :gross_vehicle_weight, :unloaded_weight, :body_type, :current_location, :current_status)
+      params.require(:truck).permit(
+        :registration_num,
+        :engine_num,
+        :chasis_num,
+        :manufacturer,
+        :model,
+        :load_capacity,
+        :load_height,
+        :load_width,
+        :load_base_length,
+        :registration_auth,
+        :fitness,
+        :purchase_date,
+        :insurer,
+        :policy_num,
+        :insurance_expiry,
+        :permit_expiry,
+        :gross_vehicle_weight,
+        :unloaded_weight,
+        :body_type,
+        :current_location,
+        :current_status)
     end
 end
