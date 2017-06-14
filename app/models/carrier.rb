@@ -5,4 +5,18 @@ class Carrier < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :trucks
+
+  before_save :upcase_fields
+  validates :name, length: { minimum: 3 }
+  validates :owner_name, length: { minimum: 3 }
+  validates :PoC, length: { minimum: 3 }
+  validates :address, length: { maximum: 500 }
+  validates :phone, length: { is: 10 }
+  validates :PAN, length: { is: 10 }
+  validates :CIN, length: { is: 21 }
+
+  def upcase_fields
+  	self.PAN.upcase!
+  end
+
 end

@@ -18,7 +18,7 @@ class DriversControllerTest < ActionDispatch::IntegrationTest
 
   # test "should create driver" do
   #   assert_difference('Driver.count') do
-  #     post drivers_url, params: { driver: { DL: @driver.DL, DL_expiry: @driver.DL_expiry, DL_issue_date: @driver.DL_issue_date, DOB: @driver.DOB, adress: @driver.adress, blood_group: @driver.blood_group, name: @driver.name } }
+  #     post drivers_url, params: { driver: { DL: @driver.DL, DL_expiry: @driver.DL_expiry, DL_issue_date: @driver.DL_issue_date, DOB: @driver.DOB, address: @driver.address, blood_group: @driver.blood_group, name: @driver.name } }
   #   end
 
   #   assert_redirected_to driver_url(Driver.last)
@@ -35,7 +35,7 @@ class DriversControllerTest < ActionDispatch::IntegrationTest
   end
 
   # test "should update driver" do
-  #   patch driver_url(@driver), params: { driver: { DL: @driver.DL, DL_expiry: @driver.DL_expiry, DL_issue_date: @driver.DL_issue_date, DOB: @driver.DOB, adress: @driver.adress, blood_group: @driver.blood_group, name: @driver.name } }
+  #   patch driver_url(@driver), params: { driver: { DL: @driver.DL, DL_expiry: @driver.DL_expiry, DL_issue_date: @driver.DL_issue_date, DOB: @driver.DOB, address: @driver.address, blood_group: @driver.blood_group, name: @driver.name } }
   #   assert_redirected_to driver_url(@driver)
   # end
 

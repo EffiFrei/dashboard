@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613195309) do
+ActiveRecord::Schema.define(version: 20170614064437) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20170613195309) do
     t.string "DL"
     t.datetime "DL_issue_date"
     t.string "name"
-    t.text "adress"
+    t.text "address"
     t.datetime "DOB"
     t.string "blood_group"
     t.datetime "DL_expiry"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20170613195309) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "phone"
     t.index ["email"], name: "index_drivers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_drivers_on_reset_password_token", unique: true
   end
@@ -90,8 +91,8 @@ ActiveRecord::Schema.define(version: 20170613195309) do
     t.string "destination"
     t.string "poc_src"
     t.string "poc_dest"
-    t.integer "phone_src"
-    t.integer "phone_dest"
+    t.string "phone_src"
+    t.string "phone_dest"
     t.string "email_src"
     t.string "email_dest"
     t.datetime "reqd_date"
