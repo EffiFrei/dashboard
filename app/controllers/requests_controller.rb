@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
-  before_action :logged_in_admin
-  # before_action :logged_in_shipper, except: [:index]
+  before_action :logged_in_admin_shipper, except: [:show]
+  before_action :logged_in_someone, only: [:show]
 
   def index
     @requests = Request.all
@@ -38,7 +38,6 @@ class RequestsController < ApplicationController
     end
   end
 
-
   def destroy
     @request = Request.find(params[:id])
     @request.destroy
@@ -47,6 +46,7 @@ class RequestsController < ApplicationController
   end
 
   private
+
     def request_params
       params.require(:request).permit(
         :source,

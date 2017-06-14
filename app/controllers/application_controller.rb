@@ -12,9 +12,21 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def logged_in_admin_shipper
+    unless shipper_signed_in? or admin_signed_in?
+      redirect_to root_path
+    end
+  end
+
   def logged_in_carrier
     unless carrier_signed_in?
       redirect_to new_carrier_session_path
     end
   end
+
+  def logged_in_someone
+    unless shipper_signed_in? or admin_signed_in? or carrier_signed_in? or driver_signed_in?
+      redirect_to root_path
+    end
+  end 
 end
