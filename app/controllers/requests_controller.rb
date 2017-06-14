@@ -1,4 +1,7 @@
 class RequestsController < ApplicationController
+  before_action :logged_in_admin
+  # before_action :logged_in_shipper, except: [:index]
+
   def index
     @requests = Request.all
   end
