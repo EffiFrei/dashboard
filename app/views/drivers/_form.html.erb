@@ -10,42 +10,38 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label "DL" %>
-    <%= form.text_field :DL, id: :driver_DL %>
-  </div>
-
-  <div class="field">
-    <%= form.label "DL_issue_date" %>
-    <%= form.datetime_select :DL_issue_date, id: :driver_DL_issue_date %>
-  </div>
-
-  <div class="field">
+<div class="row">
+  <div class="medium-4 columns">
     <%= form.label :name %>
     <%= form.text_field :name, id: :driver_name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :adress %>
-    <%= form.text_area :adress, id: :driver_adress %>
-  </div>
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :driver_phone %>
 
-  <div class="field">
-    <%= form.label :DOB %>
-    <%= form.datetime_select :DOB, id: :driver_DOB %>
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :driver_email %>
   </div>
+  <div class="medium-4 columns">
+    <%= form.label :DL, "Driving License no." %>
+    <%= form.text_field :DL, id: :driver_DL %>
 
-  <div class="field">
+    <%= form.label :DL_issue_date, "Issue Date" %>
+    <%= form.date_select :DL_issue_date, id: :driver_DL_issue_date %>
+
+    <%= form.label :DL_expiry, "Expiry Date" %>
+    <%= form.date_select :DL_expiry, id: :driver_DL_expiry %>
+  </div>
+  <div class="medium-4 columns">
+    <%= form.label :address %>
+    <%= form.text_area :address, id: :driver_address %>
+
+    <%= form.label :DOB, "Date of Birth" %>
+    <%= form.date_select :DOB, id: :driver_DOB %>
+
     <%= form.label "Blood Group" %>
-    <%= form.text_field :blood_group, id: :driver_blood_group %>
+    <%= form.select :blood_group, options_for_select(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']), id: :driver_blood_group %>
   </div>
-
-  <div class="field">
-    <%= form.label "DL_expiry" %>
-    <%= form.datetime_select :DL_expiry, id: :driver_DL_expiry %>
-  </div>
-
+</div>
   <div class="actions">
     <%= form.submit %>
   </div>

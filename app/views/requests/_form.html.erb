@@ -13,40 +13,45 @@
       </ul>
     </div>
   <% end %>
- 
-  <%= f.label :source %>
-  <%= f.text_field :source %>
 
-  <%= f.label :destination %>
-  <%= f.text_field :destination %>
+ <div class="row">
+  <div class="medium-4 columns">
+    <%= f.label :source %>
+    <%= f.text_field :source %>
 
-  <%= f.label "Number of trucks" %>
-  <%= f.number_field :num_trucks %>
+    <%= f.label :destination %>
+    <%= f.text_field :destination %>
 
-  <%= f.label "Service level" %>
-  <%= f.text_field :service_lvl %>
+    <%= f.label :num_trucks, "Number of trucks" %>
+    <%= f.number_field :num_trucks %>
 
-  <%= f.label "Required Date" %>
-  <%= f.datetime_select :reqd_date %>
+    <%= f.label :service_lvl, "Service level" %>
+    <%= f.text_field :service_lvl %>
+  </div>
+  <div class="medium-4 columns">
+    <%= f.label :reqd_date, "Required Date" %>
+    <%= f.date_select :reqd_date %>
 
-  <%= f.label "Source POC - Name" %>
-  <%= f.text_field :poc_src %>
+    <%= f.label :poc_src, "Source POC - Name" %>
+    <%= f.text_field :poc_src %>
 
-  <%= f.label "Source POC - Email" %>
-  <%= f.email_field :email_src %>
+    <%= f.label :email_src, "Source POC - Email" %>
+    <%= f.email_field :email_src %>
 
-  <%= f.label "Source POC - Phone" %>
-  <%= f.telephone_field :phone_src %>
+    <%= f.label :phone_src, "Source POC - Phone" %>
+    <%= f.telephone_field :phone_src %>
+  </div>
+  <div class="medium-4 columns">
+    <%= f.label :poc_dest, "Destination POC - Name" %>
+    <%= f.text_field :poc_dest %>
 
-  <%= f.label "Destination POC - Name" %>
-  <%= f.text_field :poc_dest %>
+    <%= f.label :email_dest, "Destination POC - Email" %>
+    <%= f.email_field :email_dest %>
 
-  <%= f.label "Destination POC - Email" %>
-  <%= f.email_field :email_dest %>
-
-  <%= f.label "Destination POC - Phone" %>
-  <%= f.telephone_field :phone_dest %>
-
+    <%= f.label :phone_dest, "Destination POC - Phone" %>
+    <%= f.telephone_field :phone_dest %>
+  </div>
+</div>
   <%= f.submit %>
  
 <% end %>

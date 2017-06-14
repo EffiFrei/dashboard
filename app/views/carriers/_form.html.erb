@@ -11,66 +11,48 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
+<div class="row">
+  <div class="medium-4 columns">
+    <%= form.label :name, "Company Name" %>
     <%= form.text_field :name, id: :carrier_name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :PoC %>
-    <%= form.text_field :PoC, id: :carrier_PoC %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_area :address, id: :carrier_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone, id: :carrier_phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :carrier_email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :reg_date %>
-    <%= form.datetime_select :reg_date, id: :carrier_reg_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :owner_name %>
+    <%= form.label :owner_name, "Name of Owner" %>
     <%= form.text_field :owner_name, id: :carrier_owner_name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :org_type %>
+    <%= form.label :reg_date, "Registration Date" %>
+    <%= form.date_select :reg_date, id: :carrier_reg_date %>
+
+    <%= form.label :org_type, "Organisation Type" %>
     <%= form.text_field :org_type, id: :carrier_org_type %>
   </div>
+  <div class="medium-4 columns">
+    <%= form.label :PoC, "Name of Point of Contact" %>
+    <%= form.text_field :PoC, id: :carrier_PoC %>
 
-  <div class="field">
-    <%= form.label :PAN %>
-    <%= form.text_field :PAN, id: :carrier_PAN %>
+    <%= form.label :address %>
+    <%= form.text_area :address, id: :carrier_address %>
+
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :carrier_phone %>
+
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :carrier_email %>
+
   </div>
-
-  <div class="field">
-    <%= form.label :ST_num %>
+  <div class="medium-4 columns">
+    <%= form.label :ST_num, "Service Tax no." %>
     <%= form.text_field :ST_num, id: :carrier_ST_num %>
-  </div>
 
-  <div class="field">
-    <%= form.label :incorporation_date %>
-    <%= form.datetime_select :incorporation_date, id: :carrier_incorporation_date %>
-  </div>
+    <%= form.label :incorporation_date, "Date of Incorporation" %>
+    <%= form.date_select :incorporation_date, id: :carrier_incorporation_date %>
 
-  <div class="field">
-    <%= form.label :CIN %>
+    <%= form.label :PAN, "PAN" %>
+    <%= form.text_field :PAN, id: :carrier_PAN %>
+
+    <%= form.label :CIN, "CIN" %>
     <%= form.text_field :CIN, id: :carrier_CIN %>
   </div>
-
+</div>
   <div class="actions">
     <%= form.submit %>
   </div>

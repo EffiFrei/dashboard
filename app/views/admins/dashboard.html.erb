@@ -1,7 +1,8 @@
 <h1>Admin Dashboard</h1>
 
 <h2><%= @shippers.count %> <%= link_to "Shippers", shippers_path %></h2>
+<h2><%= @carriers.count %> <%= link_to "Carriers", carriers_path %></h2>
 <h2><%= @drivers.count %> <%= link_to "Drivers", drivers_path %></h2>
 <h2><%= @trucks.count %> Trucks</h2>
 <h2><%= @requests.count %> <%= link_to "Requests", requests_path %></h2>
-<h2><%= @admins.count %> <%= link_to "Admins", admins_index_path %></h2>
+<h2><%= @admins.count %> <%= link_to "Admins", admins_path %></h2>

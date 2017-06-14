@@ -10,13 +10,20 @@
       </ul>
     </div>
   <% end %>
+<div class="row">
+  <div class="medium-4 columns end">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :admin_name %>
 
-  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :admin_phone %>
+
     <%= form.label :email %>
     <%= form.text_field :email, id: :admin_email %>
+    
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   </div>
-  
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+</div>
 <% end %>

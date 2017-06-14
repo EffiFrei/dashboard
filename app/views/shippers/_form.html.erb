@@ -10,57 +10,40 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+<div class="row">
+  <div class="medium-4 columns">
     <%= form.label :name %>
     <%= form.text_field :name, id: :shipper_name %>
-  </div>
 
-  <div class="field">
     <%= form.label :address %>
     <%= form.text_field :address, id: :shipper_address %>
-  </div>
+    <%= form.label :org_type %>
+    <%= form.text_field :org_type, id: :shipper_org_type %>
 
-  <div class="field">
+    <%= form.label :reg_date %>
+    <%= form.date_select :reg_date, id: :shipper_reg_date %>
+  </div>
+  <div class="medium-4 columns">
     <%= form.label :poc %>
     <%= form.text_field :poc, id: :shipper_poc %>
-  </div>
 
-  <div class="field">
     <%= form.label :email %>
     <%= form.text_field :email, id: :shipper_email %>
-  </div>
 
-  <div class="field">
     <%= form.label :phone %>
     <%= form.text_field :phone, id: :shipper_phone %>
   </div>
-
-  <div class="field">
-    <%= form.label :org_type %>
-    <%= form.text_field :org_type, id: :shipper_org_type %>
-  </div>
-
-  <div class="field">
+  <div class="medium-4 columns">
     <%= form.label :PAN %>
     <%= form.text_field :PAN, id: :shipper_PAN %>
-  </div>
 
-  <div class="field">
     <%= form.label :ST_num %>
     <%= form.text_field :ST_num, id: :shipper_ST_num %>
-  </div>
 
-  <div class="field">
     <%= form.label :CIN %>
     <%= form.text_field :CIN, id: :shipper_CIN %>
   </div>
-
-  <div class="field">
-    <%= form.label :reg_date %>
-    <%= form.datetime_select :reg_date, id: :shipper_reg_date %>
-  </div>
-
+</div>
   <div class="actions">
     <%= form.submit %>
   </div>

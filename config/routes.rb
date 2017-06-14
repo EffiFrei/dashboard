@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   devise_for :admins
   resources :admins
   get 'admin_dash', to: 'admins#dashboard'
-  get 'admins/index'
   
   get 'static_pages/home'
   root 'static_pages#home'
