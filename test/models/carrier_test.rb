@@ -32,7 +32,7 @@ class CarrierTest < ActiveSupport::TestCase
   test "should have valid phone" do
   	@carrier.phone = "123456789"
   	assert_not @carrier.save
-  	@carrier.phone = ""
+  	@carrier.phone = "01234567890"
   	assert_not @carrier.save
   end
 
@@ -60,8 +60,12 @@ class CarrierTest < ActiveSupport::TestCase
   end
 
   test "should have a valid point of contact's name" do
-  	@carrier.PoC = "AS"
+  	@carrier.PoC = ""
   	assert_not @carrier.save
+    @carrier.PoC = "A"
+    assert_not @carrier.save
+    @carrier.PoC = "AS"
+    assert_not @carrier.save
   end
 
   test "should have a valid PAN" do

@@ -19,6 +19,17 @@ FactoryGirl.define do
     password 'f4k3p455w0rd'
   end
 
+  factory :shipper do
+    name 'Example'
+    poc 'Bob'
+    address 'Jamshedpur'
+    phone '9876543210'
+    PAN 'ABCDE1234F'
+    CIN 'U12345AB6789CDE012345'
+    email 'test@example.com'
+    password 'f4k3p455w0rd'
+  end
+
   factory :driver do
   	name 'John Doe'
   	DL 'AB0123456789012'
