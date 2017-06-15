@@ -11,6 +11,8 @@
 		<% elsif admin_signed_in? %>
 			<li><%= link_to "Dashboard", admin_dash_path %></li>
 			<li><%= link_to "Profile", current_admin %></li>
+		<% elsif driver_signed_in? %>
+			<li><%= link_to "Profile", current_driver %></li>
 		<% end %>
     </ul>
   </div>

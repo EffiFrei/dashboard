@@ -6,7 +6,6 @@ class Carrier < ApplicationRecord
 
   has_many :trucks
 
-  before_save :upcase_fields
   validates :name, length: { minimum: 3 }
   validates :owner_name, length: { minimum: 3 }
   validates :PoC, length: { minimum: 3 }
@@ -14,9 +13,5 @@ class Carrier < ApplicationRecord
   validates :phone, length: { is: 10 }
   validates :PAN, length: { is: 10 }
   validates :CIN, length: { is: 21 }
-
-  def upcase_fields
-  	self.PAN.upcase!
-  end
 
 end
