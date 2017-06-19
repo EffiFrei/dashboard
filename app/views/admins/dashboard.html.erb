@@ -1,8 +1,148 @@
-<h1>Admin Dashboard</h1>
+<h1 class="text-center">Admin Dashboard</h1>
+<div id="admin_dash">
+	<div class="row">
+		<div class="small-12 medium-12 columns callout">
+			<h2 class="small-10 columns">Requests</h2>
 
-<h2><%= @shippers.count %> <%= link_to "Shippers", shippers_path %></h2>
+			<%= link_to "Create Request", new_request_path, class: "small-2 columns button"%>
+
+			<table class="text-center">
+				<tr>
+					<th>ID</th>
+					<th>Required date</th>
+					<th>Service level</th>
+					<th>Source</th>
+					<th>Destination</th>
+					<th>Action</th>
+				</tr>
+
+				<% @requests.each do |request| %>
+				<tr>
+					<td><%= request.id %></td>
+					<td><%= request.reqd_date %></td>
+					<td><%= request.service_lvl %></td>
+					<td><%= request.source %></td>
+					<td><%= request.destination %></td>
+					<td><%= link_to 'Show', request_path(request)%></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="small-12 medium-6 columns callout">
+			<h2 class="small-8 columns">Shippers</h2>
+
+			<%= link_to "Add Shipper", new_shipper_path, class: "small-4 columns button"%>
+			<table class="text-center">
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Action</th>
+				</tr>
+
+				<tbody>
+					<% @shippers.each do |shipper| %>
+					<tr>
+						<td><%= shipper.name %></td>
+						<td><%= shipper.email %></td>
+						<td><%= shipper.phone %></td>
+						<td><%= link_to 'Show', shipper %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="small-12 medium-6 columns callout">
+			<h2 class="small-8 columns">Carriers</h2>
+
+			<%= link_to "Add Carrier", new_carrier_path, class: "small-4 columns button"%>
+
+			<table class="text-center">
+				<tr>
+					<th>Name</th>
+					<th>PoC</th>
+					<th>Phone</th>
+					<th>Email</th>
+					<th>Action</th>
+				</tr>
+
+				<tbody>
+					<% @carriers.each do |carrier| %>
+					<tr>
+						<td><%= carrier.name %></td>
+						<td><%= carrier.poc %></td>
+						<td><%= carrier.phone %></td>
+						<td><%= carrier.email %></td>
+						<td><%= link_to 'Show', carrier %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="small-12 medium-6 columns callout">
+			<h2 class="small-12 columns end">Trucks</h2>
+			<table class="text-center">
+				<tr>
+					<th>Reg. num</th>
+					<th>Load Cap.</th>
+					<th>Body Type</th>
+					<th>Status</th>
+					<th>Actions</th>
+				</tr>
+
+				<tbody>
+					<% @trucks.each do |truck| %>
+					<tr>
+						<td><%= truck.registration_num %></td>
+						<td><%= truck.load_capacity %></td>
+						<td><%= truck.body_type %></td>
+						<td><%= truck.current_status %></td>
+						<td></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+		<div class="small-12 medium-6 columns callout">
+			<h2 class="small-8 columns">Drivers</h2>
+
+			<%= link_to "Add Driver", new_driver_path, class: "small-4 columns button"%>
+			<table class="text-center">
+				<tr>
+					<th>DL no.</th>
+					<th>Name</th>
+					<th>Phone</th>
+					<th>Email</th>
+					<th>BG</th>
+					<th>Action</th>
+				</tr>
+
+				<tbody>
+					<% @drivers.each do |driver| %>
+					<tr>
+						<td><%= driver.DL %></td>
+						<td><%= driver.name %></td>
+						<td><%= driver.phone %></td>
+						<td><%= driver.email %></td>
+						<td><%= driver.blood_group %></td>
+						<td><%= link_to 'Show', driver %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- <h2><%= @shippers.count %> <%= link_to "Shippers", shippers_path %></h2>
 <h2><%= @carriers.count %> <%= link_to "Carriers", carriers_path %></h2>
 <h2><%= @drivers.count %> <%= link_to "Drivers", drivers_path %></h2>
 <h2><%= @trucks.count %> Trucks</h2>
 <h2><%= @requests.count %> <%= link_to "Requests", requests_path %></h2>
-<h2><%= @admins.count %> <%= link_to "Admins", admins_path %></h2>
+<h2><%= @admins.count %> <%= link_to "Admins", admins_path %></h2> -->
