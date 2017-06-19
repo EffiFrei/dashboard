@@ -5,10 +5,10 @@
 <% if not (admin_signed_in? or carrier_signed_in? or shipper_signed_in? or driver_signed_in?) %>
 <div class="row">
 	<div class="button-group small-centered columns text-center">
-		<%= link_to "Admin Login", new_admin_session_path, class: "button" %>
-		<%= link_to "Driver Login", new_driver_session_path, class: "button" %>
-		<%= link_to "Carrier Login", new_carrier_session_path, class: "button" %>
-		<%= link_to "Shipper Login", new_shipper_session_path, class: "button" %>
+		<%= link_to "Admin", new_admin_session_path, class: "hollow button large" %>
+		<%= link_to "Driver", new_driver_session_path, class: "button large" %>
+		<%= link_to "Carrier", new_carrier_session_path, class: "hollow button large" %>
+		<%= link_to "Shipper", new_shipper_session_path, class: "button large" %>
 	</div>
 </div>
 <% end %>
