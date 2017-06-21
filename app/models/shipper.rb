@@ -4,9 +4,9 @@ class Shipper < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :name, length: { minimum: 3 }
-  validates :poc, length: { minimum: 3 }
-  validates :phone, length: { is: 10 }
-  validates :PAN, length: { is: 10 }
-  validates :CIN, length: { is: 21 }
+  validates :name, length: { minimum: 3 }, presence: true
+  validates :poc, length: { minimum: 3 }, presence: true
+  validates :phone, length: { is: 10 }, presence: true
+  validates :PAN, length: { is: 10 }, presence: true
+  validates :CIN, length: { is: 21 }, presence: true
 end
