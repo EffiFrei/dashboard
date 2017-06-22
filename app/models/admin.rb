@@ -6,4 +6,7 @@ class Admin < ApplicationRecord
   validates :name, presence: true, length: { minimum: 3 }
   validates :phone, length: { is: 10 }, presence: true
   validates :address, length: { maximum: 500 }, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
+  validates :password_confirmation, presence: true
 end

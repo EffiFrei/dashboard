@@ -81,10 +81,10 @@ ActiveRecord::Schema.define(version: 20170622124951) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.string "phone"
-    t.integer "trucks_id"
+    t.integer "truck_id"
     t.index ["email"], name: "index_drivers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_drivers_on_reset_password_token", unique: true
-    t.index ["trucks_id"], name: "index_drivers_on_trucks_id"
+    t.index ["truck_id"], name: "index_drivers_on_truck_id"
   end
 
   create_table "requests", force: :cascade do |t|

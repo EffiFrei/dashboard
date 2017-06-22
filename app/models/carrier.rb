@@ -16,5 +16,7 @@ class Carrier < ApplicationRecord
   validates :phone, length: { is: 10 }, presence: true
   validates :PAN, length: { is: 10 }, presence: true
   validates :CIN, length: { is: 21 }, presence: true
-
+  validates :email, presence: true
+  validates :password, presence: true
+  validates :password_confirmation, presence: true
 end
