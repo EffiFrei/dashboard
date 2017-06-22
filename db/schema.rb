@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614064437) do
+ActiveRecord::Schema.define(version: 20170622124951) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -81,8 +81,10 @@ ActiveRecord::Schema.define(version: 20170614064437) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.string "phone"
+    t.integer "trucks_id"
     t.index ["email"], name: "index_drivers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_drivers_on_reset_password_token", unique: true
+    t.index ["trucks_id"], name: "index_drivers_on_trucks_id"
   end
 
   create_table "requests", force: :cascade do |t|
@@ -99,6 +101,10 @@ ActiveRecord::Schema.define(version: 20170614064437) do
     t.string "service_lvl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "carrier_id"
+    t.integer "shipper_id"
+    t.index ["carrier_id"], name: "index_requests_on_carrier_id"
+    t.index ["shipper_id"], name: "index_requests_on_shipper_id"
   end
 
   create_table "shippers", force: :cascade do |t|

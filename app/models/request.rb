@@ -1,4 +1,7 @@
 class Request < ApplicationRecord
+	belongs_to :carrier
+	belongs_to :shipper
+
 	validates :source, length: { minimum: 1 }, presence: true
 	validates :destination, length: { minimum: 1 }, presence: true
 	validates :poc_src, length: { minimum: 3 }, presence: true

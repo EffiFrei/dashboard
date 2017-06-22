@@ -1,5 +1,6 @@
 class Truck < ApplicationRecord
 	belongs_to :carrier
+	has_many :drivers
 
 	validates :registration_num, presence: true
 	validates :engine_num, presence: true

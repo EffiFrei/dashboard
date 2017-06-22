@@ -5,6 +5,9 @@ class Carrier < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :trucks
+  has_many :drivers, through: :trucks
+  has_many :requests
+  has_many :shippers, through: :requests
 
   validates :name, length: { minimum: 3 }, presence: true
   validates :owner_name, length: { minimum: 3 }, presence: true
