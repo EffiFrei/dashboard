@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   get 'shipper_dash', to: 'shippers#dashboard'
   
   devise_for :carriers
-  resources :carriers do
-    resources :trucks
-  end
+  resources :carriers
   get 'carrier/dashboard', to: 'carriers#dashboard', as: 'carrier_dash'
+
+  resources :trucks
   
   resources :drivers
   

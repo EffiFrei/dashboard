@@ -1,6 +1,7 @@
 class CarriersController < ApplicationController
   before_action :set_carrier, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_admin, only: [:index, :new, :create, :destroy]
+  before_action :logged_in_admin, only: [:index, :new, :destroy]
+  before_action :correct_carrier, only: [:edit, :show]
 
   # GET /carriers
   # GET /carriers.json
@@ -78,5 +79,21 @@ class CarriersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def carrier_params
       params.require(:carrier).permit(:name, :PoC, :address, :phone, :email, :reg_date, :owner_name, :org_type, :PAN, :ST_num, :incorporation_date, :CIN)
+    end
+
+    def correct_carrier
+      if shipper_signed_in?
+        redirect_to shipper_path(current_shipper)
+      elsif driver_signed_in?
+        redirect_to driver_path(current_driver)
+      elsif admin_signed_in?
+      elsif carrier_signed_in?
+        if current_carrier == @carrier
+        else
+          redirect_to carrier_path(current_carrier)
+        end
+      else
+        redirect_to new_carrier_session_path
+      end
     end
 end

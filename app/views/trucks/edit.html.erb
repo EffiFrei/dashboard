@@ -1,6 +1,6 @@
 <h1>Editing Truck</h1>
 
-<%= form_for @truck, url: carrier_truck_path(current_carrier, @truck), method: :patch do |form| %>
+<%= form_for(@truck) do |form| %>
   
   <div class="row">
     <div class="medium-2 columns">
@@ -78,5 +78,4 @@
 
 <% end %>
 
-<%= link_to 'Show', carrier_truck_path(current_carrier, @truck), class: "button" %>
-<%= link_to 'Back', carrier_dash_path, class: "button" %>
+<%= link_to 'Show', truck_path(@truck), class: "button" %>

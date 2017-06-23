@@ -1,5 +1,7 @@
 class TrucksController < ApplicationController
   before_action :set_truck, only: [:show, :edit, :update, :destroy]
+  before_action :admin_carrier_driver, only: [:index, :show]
+  before_action :admin_carrier, only: [:edit, :update, :create, :new, :destroy]
 
   # GET /trucks
   # GET /trucks.json
@@ -24,11 +26,11 @@ class TrucksController < ApplicationController
   # POST /trucks
   # POST /trucks.json
   def create
-    @truck = current_carrier.trucks.create(truck_params)
+    @truck = Truck.create(truck_params)
 
     respond_to do |format|
       if @truck.save
-        format.html { redirect_to carrier_dash_path, notice: 'Truck was successfully created.' }
+        format.html { redirect_to truck_path(@truck), notice: 'Truck was successfully created.' }
         format.json { render :show, status: :created, location: @truck }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class TrucksController < ApplicationController
   def update
     respond_to do |format|
       if @truck.update(truck_params)
-        format.html { redirect_to carrier_dash_path, notice: 'Truck was successfully updated.' }
+        format.html { redirect_to truck_path(@truck), notice: 'Truck was successfully updated.' }
         format.json { render :show, status: :ok, location: @truck }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class TrucksController < ApplicationController
   def destroy
     @truck.destroy
     respond_to do |format|
-      format.html { redirect_to carrier_dash_path, notice: 'Truck was successfully destroyed.' }
+      format.html { redirect_to trucks_path, notice: 'Truck was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +66,7 @@ class TrucksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_truck
-      @truck = current_carrier.trucks.find(params[:id])
+      @truck = Truck.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -91,5 +93,28 @@ class TrucksController < ApplicationController
         :body_type,
         :current_location,
         :current_status)
+    end
+
+    def admin_carrier_driver
+      if admin_signed_in?
+      elsif carrier_signed_in?
+      elsif driver_signed_in?
+      elsif shipper_signed_in?
+        redirect_to shipper_path(current_shipper)
+      else
+        redirect_to new_carrier_session_path
+      end
+    end
+
+    def admin_carrier
+      if admin_signed_in?
+      elsif carrier_signed_in?
+      elsif driver_signed_in?
+        redirect_to driver_path(current_driver)
+      elsif shipper_signed_in?
+        redirect_to shipper_path(current_shipper)
+      else
+        redirect_to new_carrier_session_path
+      end
     end
 end

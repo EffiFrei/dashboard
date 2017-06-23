@@ -7,17 +7,17 @@
 	</tr>
 	<tr>
 		<td><b>Name</b></td>
-		<td><%= current_admin.name %></td>
+		<td><%= @admin.name %></td>
 	</tr>
 	<tr>
 		<td><b>Phone</b></td>
-		<td><%= current_admin.phone %></td>
+		<td><%= @admin.phone %></td>
 	</tr>
 	<tr>
 		<td><b>Email</b></td>
-		<td><%= current_admin.email %></td>
+		<td><%= @admin.email %></td>
 	</tr>
 </table>
 
-<%= link_to 'Edit', edit_admin_path(current_admin), class: "button" %>
+<%= link_to 'Edit', edit_admin_path(@admin), class: "button" %>
 <%= link_to 'Back', admin_dash_path, class: "button" %>

@@ -1,6 +1,8 @@
 class RequestsController < ApplicationController
-  before_action :logged_in_admin_shipper, except: [:show]
-  before_action :logged_in_someone, only: [:show]
+  before_action :set_request, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in, only: [:index, :show]
+  before_action :admin_shipper, only: [:new, :edit]
+  before_action :logged_in_admin, only: [:destroy]
 
   def index
     @requests = Request.all
@@ -8,7 +10,6 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
-
     if @request.save
       redirect_to @request
     else
@@ -21,16 +22,12 @@ class RequestsController < ApplicationController
   end
 
   def edit
-    @request = Request.find(params[:id])
   end
 
   def show
-    @request = Request.find(params[:id])
   end
 
   def update
-    @request = Request.find(params[:id])
-
     if @request.update(request_params)
       redirect_to @request
     else
@@ -39,13 +36,15 @@ class RequestsController < ApplicationController
   end
 
   def destroy
-    @request = Request.find(params[:id])
     @request.destroy
 
     redirect_to requests_path
   end
 
   private
+    def set_request
+      @request = Request.find(params[:id])
+    end
 
     def request_params
       params.require(:request).permit(
@@ -60,5 +59,26 @@ class RequestsController < ApplicationController
         :email_dest,
         :phone_src,
         :phone_dest)
+    end
+    def logged_in
+      if admin_signed_in?
+      elsif shipper_signed_in?
+      elsif carrier_signed_in?
+      elsif driver_signed_in?
+      else
+        redirect_to new_shipper_session_path
+      end
+    end
+
+    def admin_shipper
+      if admin_signed_in?
+      elsif shipper_signed_in?
+      elsif carrier_signed_in?
+        redirect_to carrier_path(current_carrier)
+      elsif driver_signed_in?
+        redirect_to driver_path(current_driver)
+      else
+        redirect_to new_shipper_session_path
+      end
     end
 end

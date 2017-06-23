@@ -45,8 +45,8 @@ class AdminTest < ActiveSupport::TestCase
     assert_not @admin.save
   end
 
-  test "can have empty address" do
+  test "should have a non-empty address" do
   	@admin.address = ""
-  	assert @admin.save
+  	assert_not @admin.save
   end
 end

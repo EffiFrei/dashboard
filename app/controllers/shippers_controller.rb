@@ -1,6 +1,7 @@
 class ShippersController < ApplicationController
   before_action :set_shipper, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_admin, only: [:index, :new, :create, :destroy]
+  before_action :logged_in_admin, only: [:index, :new, :destroy]
+  before_action :correct_shipper, only: [:edit, :show]
 
   # GET /shippers
   # GET /shippers.json
@@ -75,5 +76,21 @@ class ShippersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def shipper_params
       params.require(:shipper).permit(:name, :address, :poc, :email, :phone, :org_type, :PAN, :ST_num, :CIN, :reg_date)
+    end
+
+    def correct_shipper
+      if carrier_signed_in?
+        redirect_to carrier_path(current_carrier)
+      elsif driver_signed_in?
+        redirect_to driver_path(current_driver)
+      elsif admin_signed_in?
+      elsif shipper_signed_in?
+        if current_shipper == @shipper
+        else
+          redirect_to shipper_path(current_shipper)
+        end
+      else
+        redirect_to new_shipper_session_path
+      end
     end
 end
