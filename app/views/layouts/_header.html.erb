@@ -9,7 +9,7 @@
 			<li><%= link_to "Dashboard", shipper_dash_path %></li>
 			<li><%= link_to "Profile", current_shipper %></li>
 		<% elsif admin_signed_in? %>
-			<!-- <li><%= link_to "Dashboard", admin_dash_path %></li> -->
+			<li><%= link_to "Dashboard", admin_dash_path %></li>
 			<li><%= link_to "Boss", rails_admin_path %></li>
 			<li><%= link_to "Profile", current_admin %></li>
 		<% elsif driver_signed_in? %>
