@@ -8,6 +8,7 @@
 		<% elsif shipper_signed_in? %>
 			<li><%= link_to "Dashboard", shipper_dash_path %></li>
 			<li><%= link_to "Profile", current_shipper %></li>
+			<li><%= link_to "Request Wizard", step1_wizard_path %></li>
 		<% elsif admin_signed_in? %>
 			<li><%= link_to "Dashboard", admin_dash_path %></li>
 			<li><%= link_to "Boss", rails_admin_path %></li>

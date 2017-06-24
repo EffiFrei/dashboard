@@ -12,9 +12,9 @@ class Request < ApplicationRecord
 	validates :email_src, presence: true
 	validates :email_dest, presence: true
 	validates :num_trucks, presence: true, numericality: { only_integer: true , greater_than: 0 }
-	validates :service_lvl, presence: true
 	validates :carrier_id, presence: true
 	validates :shipper_id, presence: true
+	validates :load_weight, presence: true
 	validate  :reqd_date_in_the_future
 
 	def reqd_date_in_the_future

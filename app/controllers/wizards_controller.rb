@@ -48,7 +48,6 @@ class WizardsController < ApplicationController
 			:source,
 			:destination,
 			:num_trucks,
-			:service_lvl,
 			:reqd_date,
 			:poc_src,
 			:poc_dest,
@@ -57,7 +56,8 @@ class WizardsController < ApplicationController
 			:phone_src,
 			:phone_dest,
 			:carrier_id,
-			:shipper_id)
+			:shipper_id,
+			:load_weight)
 	end
 
 	class InvalidStep < StandardError; end

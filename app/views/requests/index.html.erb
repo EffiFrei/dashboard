@@ -1,29 +1,33 @@
 <h1>Listing requests</h1>
- 
+
 <table>
   <tr>
-    <th>ID</th>
-    <th>Required date</th>
-    <th>Service level</th>
+    <!-- <th>ID</th> -->
+    <!-- <th>Required date</th> -->
+    <!-- <th>Service level</th> -->
+    <th>Carrier</th>
+    <th>Shipper</th>
     <th>Source</th>
     <th>Destination</th>
     <th>Actions</th>
   </tr>
- 
+  
   <% @requests.each do |request| %>
-    <tr>
-      <td><%= request.id %></td>
-      <td><%= request.reqd_date %></td>
-      <td><%= request.service_lvl %></td>
-      <td><%= request.source %></td>
-      <td><%= request.destination %></td>
-      <td><%= link_to 'Show', request_path(request), class: "button" %>
+  <tr>
+    <!-- <td><%= request.id %></td> -->
+    <td><%= Carrier.find_by(id: @request.carrier_id).name %></td>
+    <td><%= Shipper.find_by(id: @request.shipper_id).name %></td>
+    <td><%= request.reqd_date %></td>
+    <td><%= request.service_lvl %></td>
+    <td><%= request.source %></td>
+    <td><%= request.destination %></td>
+    <td><%= link_to 'Show', request_path(request), class: "button" %>
       <%= link_to 'Edit', edit_request_path(request), class: "warning button" %>
       <%= link_to 'Destroy', request_path(request),
-              method: :delete,
-              data: { confirm: 'Are you sure?' },
-              class: "alert button" %></td>
-    </tr>
+      method: :delete,
+      data: { confirm: 'Are you sure?' },
+      class: "alert button" %></td>
+  </tr>
   <% end %>
 </table>
 

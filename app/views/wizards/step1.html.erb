@@ -15,10 +15,14 @@
 
     <%= f.input :destination %>
 
-    <%= f.input :num_trucks %>
+    <%= f.input :load_weight, as: :integer, label: 'Load Weight in MT' %>
 
+    <% if admin_signed_in? %>
     <%= f.label :shipper_id %>
     <%= f.select :shipper_id, Shipper.all.collect {|p| [p.name, p.id]}, label: 'Shipper' %>
+    <% elsif shipper_signed_in? %>
+    <%= f.input :shipper_id, as: :hidden, value: current_shipper.id %>
+    <% end %>
   </div>
 </div>
 <div class="row columns">

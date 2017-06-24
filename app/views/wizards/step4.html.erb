@@ -10,10 +10,20 @@
 
 <%= hidden_field_tag :current_step, 'step4' %>
 
+<h4>Contact Person</h4>
 <div class="row">
+	<div class="medium-4 columns">
+		<h4>Source</h4>
+		<%= f.input :poc_src, label: 'Name' %>
+		<%= f.input :phone_src, label: 'Phone' %>
+		<%= f.input :email_src, label: 'Email' %>
+	</div>
+
 	<div class="medium-4 columns end">
-		<%= f.label :carrier_id %>
-		<%= f.select :carrier_id, Carrier.all.collect {|p| [p.name, p.id]} %>
+		<h4>Destination</h4>
+		<%= f.input :poc_dest, label: 'Name' %>
+		<%= f.input :phone_dest, label: 'Phone' %>
+		<%= f.input :email_dest, label: 'Email' %>
 	</div>
 </div>
 <div class="row columns">

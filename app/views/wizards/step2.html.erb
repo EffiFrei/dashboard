@@ -9,20 +9,26 @@
 <%= f.error_notification %>
 
 <%= hidden_field_tag :current_step, 'step2' %>
-<h4>Contact Person</h4>
 <div class="row">
-	<div class="medium-4 columns">
-		<h4>Source</h4>
-		<%= f.input :poc_src, label: 'Name' %>
-		<%= f.input :phone_src, label: 'Phone' %>
-		<%= f.input :email_src, label: 'Email' %>
-	</div>
-
-	<div class="medium-4 columns end">
-		<h4>Destination</h4>
-		<%= f.input :poc_dest, label: 'Name' %>
-		<%= f.input :phone_dest, label: 'Phone' %>
-		<%= f.input :email_dest, label: 'Email' %>
+	<div class="medium-6 columns end">
+		<h4>Load Weight: <%= @request_wizard.load_weight %> MT</h4>
+		<h4>Available Trucks:</h4>
+		<table>
+			<tr>
+				<th>Reg. num.</th>
+				<th>Load Capacity</th>
+				<th>Carrier</th>
+			</tr>
+			<% Truck.where("load_capacity > ?", @request_wizard.load_weight).find_each do |truck| %>
+				<tr>
+					<td><%= truck.registration_num.upcase %></td>
+					<td><%= truck.load_capacity %></td>
+					<td><%= Carrier.find(truck.carrier_id).name %></td>
+				</tr>
+			<% end %>
+		</table>
+		<%= f.label :carrier_id, 'Select the truck' %>
+		<%= f.select :carrier_id, Truck.where("load_capacity > ?", @request_wizard.load_weight).collect {|p| [p.registration_num.upcase, p.carrier_id]} %>
 	</div>
 </div>
 <div class="row columns">
