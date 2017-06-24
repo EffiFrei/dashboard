@@ -1,0 +1,17 @@
+<ol class="breadcrumb">
+  <li class='active'>Step 1</li>
+  <li>Step 2</li>
+  <li>Step 3</li>
+  <li>Step 4</li>
+</ol>
+
+<%= simple_form_for @request_wizard, as: :request_wizard, url: validate_step_wizard_path do |f| %>
+  <%= f.error_notification %>
+
+  <%= hidden_field_tag :current_step, 'step1' %>
+  <%= f.input :source %>
+  <%= f.select :carrier_id, Carrier.all.collect {|p| [p.name, p.id]} %>
+  <%= f.select :shipper_id, Shipper.all.collect {|p| [p.name, p.id]} %>
+
+  <%= f.submit 'Continue' %>
+<% end %>

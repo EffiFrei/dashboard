@@ -24,6 +24,7 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'rails_admin', '~> 1.2'
+gem 'simple_form'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

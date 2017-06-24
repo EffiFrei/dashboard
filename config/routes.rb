@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'wizards/validate_step'
+
+  get 'wizards/create'
+
   mount RailsAdmin::Engine => '/boss', as: 'rails_admin'
   devise_for :shippers
   
@@ -23,5 +27,14 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   
   resources :requests
+
+  resource :wizard do
+    get :step1
+    get :step2
+    get :step3
+    get :step4
+
+    post :validate_step
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

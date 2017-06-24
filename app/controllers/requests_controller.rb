@@ -58,7 +58,9 @@ class RequestsController < ApplicationController
         :email_src,
         :email_dest,
         :phone_src,
-        :phone_dest)
+        :phone_dest,
+        :carrier_id,
+        :shipper_id)
     end
     def logged_in
       if admin_signed_in?
