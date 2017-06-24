@@ -1,4 +1,5 @@
 class Truck < ApplicationRecord
+	belongs_to :request
 	belongs_to :carrier
 	has_many :drivers
 

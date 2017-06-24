@@ -56,11 +56,6 @@ class RequestTest < ActiveSupport::TestCase
   	assert_not @request.save
   end
 
-  test "carrier id should be present" do
-    @request.carrier_id = nil
-    assert_not @request.valid?
-  end
-
   test "shipper id should be present" do
     @request.shipper_id = nil
     assert_not @request.valid?

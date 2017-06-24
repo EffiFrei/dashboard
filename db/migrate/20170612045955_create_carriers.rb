@@ -6,12 +6,11 @@ class CreateCarriers < ActiveRecord::Migration[5.1]
       t.text :address
       t.string :phone
       t.string :email
-      t.timestamp :reg_date
       t.string :owner_name
       t.string :org_type
       t.string :PAN
       t.string :ST_num
-      t.timestamp :incorporation_date
+      t.date :reg_date
       t.string :CIN
 
       t.timestamps

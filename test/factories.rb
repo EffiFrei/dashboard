@@ -35,16 +35,6 @@ FactoryGirl.define do
     password '123456'
     password_confirmation '123456'
   end
-  
-  factory :truck do
-    carrier
-    registration_num '43245345'
-    engine_num '345435'
-    chasis_num '423423'
-    manufacturer 'example'
-    model 'example'
-    load_capacity 10
-  end
 
   factory :driver do
     name
@@ -58,13 +48,27 @@ FactoryGirl.define do
   end
   
   factory :request do
-    carrier
     shipper
-  	source 'Tomorrowland'
-  	destination 'Gotham'
-  	poc_src 'John Doe'
+    source 'Tomorrowland'
+    destination 'Gotham'
+    poc_src 'John Doe'
+    email_src 'test@test.com'
     phone_src '9876543210'
     poc_dest 'John Doe'
     phone_dest '9876543210'
+    email_dest 'test@test.com'
+    num_trucks 2
+    load_weight 12
+  end
+  
+  factory :truck do
+    request
+    carrier
+    registration_num '43245345'
+    engine_num '345435'
+    chasis_num '423423'
+    manufacturer 'example'
+    model 'example'
+    load_capacity 10
   end
 end

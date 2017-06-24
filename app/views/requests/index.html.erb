@@ -5,8 +5,6 @@
     <!-- <th>ID</th> -->
     <!-- <th>Required date</th> -->
     <!-- <th>Service level</th> -->
-    <th>Carrier</th>
-    <th>Shipper</th>
     <th>Source</th>
     <th>Destination</th>
     <th>Actions</th>
@@ -15,8 +13,6 @@
   <% @requests.each do |request| %>
   <tr>
     <!-- <td><%= request.id %></td> -->
-    <td><%= Carrier.find_by(id: @request.carrier_id).name %></td>
-    <td><%= Shipper.find_by(id: @request.shipper_id).name %></td>
     <td><%= request.reqd_date %></td>
     <td><%= request.service_lvl %></td>
     <td><%= request.source %></td>

@@ -5,7 +5,6 @@ class Shipper < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
  	has_many :requests
- 	has_many :carriers, through: :requests
 
   validates :name, length: { minimum: 3 }, presence: true
   validates :poc, length: { minimum: 3 }, presence: true

@@ -21,7 +21,7 @@ module Wizard
     end
 
     class Step2 < Step1
-      validates :carrier_id, presence: true
+      # validates :carrier_id, presence: true
     end
 
     class Step3 < Step2

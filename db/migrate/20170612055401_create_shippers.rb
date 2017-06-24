@@ -10,7 +10,7 @@ class CreateShippers < ActiveRecord::Migration[5.1]
       t.string :PAN
       t.string :ST_num
       t.string :CIN
-      t.string :reg_date
+      t.date :reg_date
 
       t.timestamps
     end

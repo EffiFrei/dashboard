@@ -10,9 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624173418) do
+ActiveRecord::Schema.define(version: 20170612095104) do
 
   create_table "admins", force: :cascade do |t|
+    t.string "name"
+    t.string "phone"
+    t.text "address"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -25,9 +28,6 @@ ActiveRecord::Schema.define(version: 20170624173418) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "phone"
-    t.text "address"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
@@ -38,12 +38,11 @@ ActiveRecord::Schema.define(version: 20170624173418) do
     t.text "address"
     t.string "phone"
     t.string "email", default: "", null: false
-    t.datetime "reg_date"
     t.string "owner_name"
     t.string "org_type"
     t.string "PAN"
     t.string "ST_num"
-    t.datetime "incorporation_date"
+    t.date "reg_date"
     t.string "CIN"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -62,12 +61,14 @@ ActiveRecord::Schema.define(version: 20170624173418) do
 
   create_table "drivers", force: :cascade do |t|
     t.string "DL"
-    t.datetime "DL_issue_date"
+    t.date "DL_issue_date"
     t.string "name"
+    t.string "phone"
     t.text "address"
-    t.datetime "DOB"
+    t.date "DOB"
     t.string "blood_group"
-    t.datetime "DL_expiry"
+    t.date "DL_expiry"
+    t.integer "truck_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -80,8 +81,6 @@ ActiveRecord::Schema.define(version: 20170624173418) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "phone"
-    t.integer "truck_id"
     t.index ["email"], name: "index_drivers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_drivers_on_reset_password_token", unique: true
     t.index ["truck_id"], name: "index_drivers_on_truck_id"
@@ -97,17 +96,15 @@ ActiveRecord::Schema.define(version: 20170624173418) do
     t.string "phone_dest"
     t.string "email_src"
     t.string "email_dest"
-    t.datetime "reqd_date"
+    t.date "reqd_date"
     t.string "service_lvl"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "carrier_id"
-    t.integer "shipper_id"
     t.integer "load_weight"
     t.integer "load_height"
     t.integer "load_length"
     t.integer "load_width"
-    t.index ["carrier_id"], name: "index_requests_on_carrier_id"
+    t.integer "shipper_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["shipper_id"], name: "index_requests_on_shipper_id"
   end
 
@@ -121,7 +118,7 @@ ActiveRecord::Schema.define(version: 20170624173418) do
     t.string "PAN"
     t.string "ST_num"
     t.string "CIN"
-    t.datetime "reg_date"
+    t.date "reg_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "encrypted_password", default: "", null: false
@@ -149,20 +146,22 @@ ActiveRecord::Schema.define(version: 20170624173418) do
     t.integer "load_base_length"
     t.string "registration_auth"
     t.string "fitness"
-    t.datetime "purchase_date"
+    t.date "purchase_date"
     t.string "insurer"
     t.string "policy_num"
-    t.datetime "insurance_expiry"
-    t.datetime "permit_expiry"
+    t.date "insurance_expiry"
+    t.date "permit_expiry"
     t.integer "gross_vehicle_weight"
     t.integer "unloaded_weight"
     t.string "body_type"
     t.string "current_location"
     t.string "current_status"
+    t.integer "request_id"
+    t.integer "carrier_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "carrier_id"
     t.index ["carrier_id"], name: "index_trucks_on_carrier_id"
+    t.index ["request_id"], name: "index_trucks_on_request_id"
   end
 
 end

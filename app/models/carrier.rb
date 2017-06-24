@@ -6,8 +6,7 @@ class Carrier < ApplicationRecord
 
   has_many :trucks
   has_many :drivers, through: :trucks
-  has_many :requests
-  has_many :shippers, through: :requests
+  has_many :requests, through: :trucks
 
   validates :name, length: { minimum: 3 }, presence: true
   validates :owner_name, length: { minimum: 3 }, presence: true

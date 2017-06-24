@@ -2,7 +2,7 @@ require 'test_helper'
 
 class DriversControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @driver = drivers(:one)
+    @driver = FactoryGirl.create(:driver)
     @admin = FactoryGirl.create(:admin)
   end
 

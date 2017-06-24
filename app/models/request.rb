@@ -1,6 +1,7 @@
 class Request < ApplicationRecord
-	belongs_to :carrier
 	belongs_to :shipper
+	has_many :trucks
+	has_many :carriers, through: :trucks
 
 	validates :source, length: { minimum: 1 }, presence: true
 	validates :destination, length: { minimum: 1 }, presence: true
@@ -12,7 +13,6 @@ class Request < ApplicationRecord
 	validates :email_src, presence: true
 	validates :email_dest, presence: true
 	validates :num_trucks, presence: true, numericality: { only_integer: true , greater_than: 0 }
-	validates :carrier_id, presence: true
 	validates :shipper_id, presence: true
 	validates :load_weight, presence: true
 	validate  :reqd_date_in_the_future
