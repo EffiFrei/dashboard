@@ -17,7 +17,10 @@
 		<td><b>Email</b></td>
 		<td><%= @admin.email %></td>
 	</tr>
+	<tr>
+		<td><b>Address</b></td>
+		<td><%= @admin.address %></td>
+	</tr>
 </table>
 
-<%= link_to 'Edit', edit_admin_path(@admin), class: "button" %>
-<%= link_to 'Back', admin_dash_path, class: "button" %>
+<%= link_to 'Edit', edit_admin_path(@admin), class: "warning button" %>
