@@ -7,9 +7,19 @@ class ApplicationController < ActionController::Base
       redirect_to shipper_path(current_shipper)
     elsif driver_signed_in?
       redirect_to driver_path(current_driver)
-    elsif  admin_signed_in?
+    elsif admin_signed_in?
     else
       redirect_to new_admin_session_path
+    end
+  end
+
+  protected
+
+  def devise_parameter_sanitizer
+    if resource_class == Admin
+      Admin::ParameterSanitizer.new(Admin, :admin, params)
+    else
+      super # Use the default one
     end
   end
 end
