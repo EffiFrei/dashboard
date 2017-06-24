@@ -1,16 +1,23 @@
 <ul class="breadcrumbs">
-  <li><%= link_to "Step 1", step1_wizard_path %></li>
-  <li><%= link_to "Step 2", step2_wizard_path %></li>
-  <li>Step 3</li>
-  <li class="disabled">Step 4</li>
+	<li><%= link_to "Step 1", step1_wizard_path %></li>
+	<li><%= link_to "Step 2", step2_wizard_path %></li>
+	<li>Step 3</li>
+	<li class="disabled">Step 4</li>
 </ul>
 
 <%= simple_form_for @request_wizard, as: :request_wizard, url: validate_step_wizard_path do |f| %>
-  <%= f.error_notification %>
+<%= f.error_notification %>
 
-  <%= hidden_field_tag :current_step, 'step3' %>
-  <%= f.input :phone_src %>
-  <%= f.input :phone_dest %>
+<%= hidden_field_tag :current_step, 'step3' %>
+<div class="row">
+	<div class="medium-4 columns end">
+		<%= f.label :reqd_date, 'Required Date' %>
+		<%= f.date_select :reqd_date %>
 
-  <%= f.submit 'Continue' %>
+		<%= f.input :service_lvl, label: 'Service Level' %>
+	</div>
+</div>
+<div class="row columns">
+	<%= f.submit 'Continue', class: "button" %>
+</div>
 <% end %>

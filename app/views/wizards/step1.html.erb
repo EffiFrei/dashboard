@@ -6,17 +6,22 @@
 </ul>
 
 <%= simple_form_for @request_wizard, as: :request_wizard, url: validate_step_wizard_path do |f| %>
-  <%= f.error_notification %>
+<%= f.error_notification %>
 
-  <%= hidden_field_tag :current_step, 'step1' %>
+<%= hidden_field_tag :current_step, 'step1' %>
+<div class="row">
+  <div class="medium-4 columns end">
+    <%= f.input :source %>
 
-  <%= f.input :source %>
+    <%= f.input :destination %>
 
-  <%= f.label :carrier_id %>
-  <%= f.select :carrier_id, Carrier.all.collect {|p| [p.name, p.id]} %>
+    <%= f.input :num_trucks %>
 
-  <%= f.label :shipper_id %>
-  <%= f.select :shipper_id, Shipper.all.collect {|p| [p.name, p.id]} %>
-
-  <%= f.submit 'Continue' %>
+    <%= f.label :shipper_id %>
+    <%= f.select :shipper_id, Shipper.all.collect {|p| [p.name, p.id]}, label: 'Shipper' %>
+  </div>
+</div>
+<div class="row columns">
+  <%= f.submit 'Continue', class: "button" %>
+</div>
 <% end %>

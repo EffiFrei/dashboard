@@ -1,16 +1,22 @@
 <ul class="breadcrumbs">
-  <li><%= link_to "Step 1", step1_wizard_path %></li>
-  <li><%= link_to "Step 2", step2_wizard_path %></li>
-  <li><%= link_to "Step 3", step3_wizard_path %></li>
-  <li>Step 4</li>
+	<li><%= link_to "Step 1", step1_wizard_path %></li>
+	<li><%= link_to "Step 2", step2_wizard_path %></li>
+	<li><%= link_to "Step 3", step3_wizard_path %></li>
+	<li>Step 4</li>
 </ul>
 
 <%= simple_form_for @request_wizard, as: :request_wizard, url: validate_step_wizard_path do |f| %>
-  <%= f.error_notification %>
+<%= f.error_notification %>
 
-  <%= hidden_field_tag :current_step, 'step4' %>
-  <%= f.input :poc_src %>
-  <%= f.input :poc_dest %>
+<%= hidden_field_tag :current_step, 'step4' %>
 
-  <%= f.submit 'Finish' %>
+<div class="row">
+	<div class="medium-4 columns end">
+		<%= f.label :carrier_id %>
+		<%= f.select :carrier_id, Carrier.all.collect {|p| [p.name, p.id]} %>
+	</div>
+</div>
+<div class="row columns">
+<%= f.submit 'Finish', class: "button" %>
+</div>
 <% end %>
