@@ -70,9 +70,9 @@ class AdminTest < ActiveSupport::TestCase
     assert_not @admin.valid?
   end
 
-  test "should have a non-empty address" do
+  test "can have a non-empty address" do
   	@admin.address = "  "
-  	assert_not @admin.valid?
+  	assert @admin.valid?
   end
 
   test "address should not be too long" do
