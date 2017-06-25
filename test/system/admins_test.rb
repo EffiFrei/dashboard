@@ -3,6 +3,7 @@ require "application_system_test_case"
 class AdminsTest < ApplicationSystemTestCase
 	setup do
 		@admin = FactoryGirl.create(:admin)
+		# valid login
 		visit new_admin_session_path
 		fill_in "Email", with: @admin.email
 		fill_in "Password", with: @admin.password
@@ -23,7 +24,6 @@ class AdminsTest < ApplicationSystemTestCase
 
 	test "should see all links in profile page" do
 		visit admin_path(@admin)
-		# assert_template 'admins/show'
 		assert_selector 'a', text: 'Edit'
 		assert_selector 'td', text: @admin.name
 		assert_selector 'td', text: @admin.email
