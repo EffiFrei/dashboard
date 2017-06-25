@@ -103,9 +103,11 @@ ActiveRecord::Schema.define(version: 20170612095104) do
     t.integer "load_length"
     t.integer "load_width"
     t.integer "shipper_id"
+    t.integer "truck_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shipper_id"], name: "index_requests_on_shipper_id"
+    t.index ["truck_id"], name: "index_requests_on_truck_id"
   end
 
   create_table "shippers", force: :cascade do |t|
@@ -156,12 +158,10 @@ ActiveRecord::Schema.define(version: 20170612095104) do
     t.string "body_type"
     t.string "current_location"
     t.string "current_status"
-    t.integer "request_id"
     t.integer "carrier_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["carrier_id"], name: "index_trucks_on_carrier_id"
-    t.index ["request_id"], name: "index_trucks_on_request_id"
   end
 
 end

@@ -1,7 +1,6 @@
 class Request < ApplicationRecord
 	belongs_to :shipper
-	has_many :trucks
-	has_many :carriers, through: :trucks
+	belongs_to :truck
 
 	validates :source, length: { minimum: 1 }, presence: true
 	validates :destination, length: { minimum: 1 }, presence: true

@@ -22,7 +22,6 @@ class CreateTrucks < ActiveRecord::Migration[5.1]
       t.string :body_type
       t.string :current_location
       t.string :current_status
-      t.belongs_to :request, index: true
       t.belongs_to :carrier, index: true
 
       t.timestamps

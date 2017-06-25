@@ -17,6 +17,7 @@ class CreateRequests < ActiveRecord::Migration[5.1]
       t.integer :load_length
       t.integer :load_width
       t.belongs_to :shipper, index: true
+      t.belongs_to :truck, index: true
 
       t.timestamps
     end

@@ -17,12 +17,14 @@
 
 <!-- - belongs to carrier -->
 - belongs to shipper
-- has many trucks
-- has many carriers through trucks
+- belongs to truck
+<!-- - has many trucks -->
+<!-- - has many carriers through trucks -->
 
 ## Truck
 
-- belongs to request
+- has many requests
+<!-- - belongs to request -->
 - belongs to carrier
 - has many drivers
 

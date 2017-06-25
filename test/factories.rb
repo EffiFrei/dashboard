@@ -49,6 +49,7 @@ FactoryGirl.define do
   
   factory :request do
     shipper
+    truck
     source 'Tomorrowland'
     destination 'Gotham'
     poc_src 'John Doe'
@@ -62,7 +63,6 @@ FactoryGirl.define do
   end
   
   factory :truck do
-    request
     carrier
     registration_num '43245345'
     engine_num '345435'
