@@ -45,9 +45,9 @@ class CarrierTest < ActiveSupport::TestCase
   	assert_not @carrier.save
   end
 
-  test "should have a non-empty address" do
+  test "can have a non-empty address" do
   	@carrier.address = ""
-  	assert_not @carrier.save
+  	assert @carrier.save
   end
 
   test "should have a valid owner name" do

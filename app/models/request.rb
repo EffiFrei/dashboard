@@ -11,8 +11,12 @@ class Request < ApplicationRecord
 	validates :phone_dest, length: { is: 10 }, presence: true
 	validates :email_src, presence: true
 	validates :email_dest, presence: true
+
 	validates :num_trucks, presence: true, numericality: { only_integer: true , greater_than: 0 }
+
 	validates :shipper_id, presence: true
+	validates :truck_id, presence: true
+
 	validates :load_weight, presence: true
 	validate  :reqd_date_in_the_future
 

@@ -59,7 +59,7 @@ class RequestsController < ApplicationController
         :email_dest,
         :phone_src,
         :phone_dest,
-        :carrier_id,
+        :truck_id,
         :shipper_id,
         :load_weight)
     end
