@@ -1,9 +1,24 @@
-<h1>
-  Carrier Dashboard:
-  <%= current_carrier.email %>
-</h1>
+<h1>Carrier Dashboard:</h1>
 
-<h2>Trucks List</h2>
-<%= render partial: 'trucks/table',  locals: {trucks: current_carrier.trucks} %>
+<div class="row">
+	<div class="medium-12 columns callout">
+		<h2 class="small-10 columns">List of Trucks</h2>
+		<%= link_to "Add Truck", new_truck_path, class: "button small-2 columns" %>
+		<%= render partial: 'trucks/table',  locals: {trucks: current_carrier.trucks} %>
+	</div>
+</div>
 
-<%= link_to "Add Truck", new_carrier_truck_path(current_carrier), class: "button" %>
+<div class="row">
+	<div class="medium-12 columns callout">
+		<h2 class="small-10 columns">List of Drivers</h2>
+		<%= link_to 'Add Driver', new_driver_path, class: "button small-2 columns" %>
+		<%= render partial: 'drivers/table',  locals: {drivers: current_carrier.drivers} %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="medium-12 columns callout">
+		<h2 class="small-10 columns">List of Requests</h2>
+		<%= render partial: 'requests/table',  locals: {requests: current_carrier.requests} %>
+	</div>
+</div>

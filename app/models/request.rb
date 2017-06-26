@@ -25,4 +25,12 @@ class Request < ApplicationRecord
 			errors.add(:reqd_date, "can't be in the past")
 		end
 	end
+
+	def shipper_data
+		Shipper.find(self.shipper_id)
+	end
+
+	def truck_data
+		Truck.find(self.truck_id)
+	end
 end

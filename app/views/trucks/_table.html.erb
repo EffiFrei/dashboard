@@ -1,8 +1,7 @@
 <table>
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Registration num</th>
+      <th>Reg. num.</th>
       <!-- <th>Engine num</th> -->
       <!-- <th>Chasis num</th> -->
       <th>Manufacturer</th>
@@ -21,8 +20,8 @@
       <!-- <th>Gross vehicle weight</th> -->
       <!-- <th>Unloaded weight</th> -->
       <th>Body type</th>
-      <!-- <th>Current location</th> -->
-      <!-- <th>Current status</th> -->
+      <th>Current Location</th>
+      <th>Status</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -30,7 +29,6 @@
   <tbody>
     <% trucks.each do |truck| %>
       <tr>
-        <td><%= truck.id %></td>
         <td><%= truck.registration_num %></td>
         <!-- <td><%= truck.engine_num %></td> -->
         <!-- <td><%= truck.chasis_num %></td> -->
@@ -50,17 +48,14 @@
         <!-- <td><%= truck.gross_vehicle_weight %></td> -->
         <!-- <td><%= truck.unloaded_weight %></td> -->
         <td><%= truck.body_type %></td>
-        <!-- <td><%= truck.current_location %></td> -->
-        <!-- <td><%= truck.current_status %></td> -->
+        <td><%= truck.current_location %></td>
+        <td><%= truck.current_status %></td>
         <td>
-          <%= link_to 'Show', carrier_truck_path(current_carrier, truck),
-            class: "button" %>
-          <%= link_to 'Edit', edit_carrier_truck_path(current_carrier, truck),
-            class: "warning button" %>
-          <%= link_to 'Delete', carrier_truck_path(current_carrier, truck),
+          <%= link_to 'Show', truck_path(truck) %> |
+          <%= link_to 'Edit', edit_truck_path(truck) %> |
+          <%= link_to 'Delete', truck_path(truck),
             method: :delete,
-            data: { confirm: 'Are you sure?' },
-            class: "alert button" %>
+            data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
