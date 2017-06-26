@@ -2,8 +2,8 @@
 
 <table>
   <tr>
-    <!-- <th>ID</th> -->
-    <!-- <th>Required date</th> -->
+    <th>ID</th>
+    <th>Required date</th>
     <!-- <th>Service level</th> -->
     <th>Source</th>
     <th>Destination</th>
@@ -12,17 +12,15 @@
   
   <% @requests.each do |request| %>
   <tr>
-    <!-- <td><%= request.id %></td> -->
+    <td><%= request.id %></td>
     <td><%= request.reqd_date %></td>
-    <td><%= request.service_lvl %></td>
     <td><%= request.source %></td>
     <td><%= request.destination %></td>
-    <td><%= link_to 'Show', request_path(request), class: "button" %>
-      <%= link_to 'Edit', edit_request_path(request), class: "warning button" %>
+    <td><%= link_to 'Show', request_path(request) %> |
+      <%= link_to 'Edit', edit_request_path(request) %> |
       <%= link_to 'Destroy', request_path(request),
       method: :delete,
-      data: { confirm: 'Are you sure?' },
-      class: "alert button" %></td>
+      data: { confirm: 'Are you sure?' } %></td>
   </tr>
   <% end %>
 </table>

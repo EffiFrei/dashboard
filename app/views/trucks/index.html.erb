@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>ID</th>
       <th>Registration num</th>
       <!-- <th>Engine num</th> -->
       <!-- <th>Chasis num</th> -->
@@ -34,7 +33,6 @@
   <tbody>
     <% @trucks.each do |truck| %>
       <tr>
-        <td><%= truck.id %></td>
         <td><%= truck.registration_num %></td>
         <!-- <td><%= truck.engine_num %></td> -->
         <!-- <td><%= truck.chasis_num %></td> -->
@@ -56,7 +54,9 @@
         <td><%= truck.body_type %></td>
         <!-- <td><%= truck.current_location %></td> -->
         <!-- <td><%= truck.current_status %></td> -->
-        <td></td>
+        <td><%= link_to 'Show', truck %> |
+        <%= link_to 'Edit', edit_truck_path(truck) %> |
+        <%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

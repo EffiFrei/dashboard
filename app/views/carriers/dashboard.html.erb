@@ -4,7 +4,41 @@
 	<div class="medium-12 columns callout">
 		<h2 class="small-10 columns">List of Trucks</h2>
 		<%= link_to "Add Truck", new_truck_path, class: "button small-2 columns" %>
-		<%= render partial: 'trucks/table',  locals: {trucks: current_carrier.trucks} %>
+		<table>
+			<thead>
+				<tr>
+					<th>Reg. num.</th>
+					<th>Manufacturer</th>
+					<th>Model</th>
+					<th>Load capacity</th>
+					<th>Body type</th>
+					<th>Current Location</th>
+					<th>Status</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<% @trucks.each do |truck| %>
+				<tr>
+					<td><%= truck.registration_num %></td>
+					<td><%= truck.manufacturer %></td>
+					<td><%= truck.model %></td>
+					<td><%= truck.load_capacity %></td>
+					<td><%= truck.body_type %></td>
+					<td><%= truck.current_location %></td>
+					<td><%= truck.current_status %></td>
+					<td>
+						<%= link_to 'Show', truck_path(truck) %> |
+						<%= link_to 'Edit', edit_truck_path(truck) %> |
+						<%= link_to 'Delete', truck_path(truck),
+						method: :delete,
+						data: { confirm: 'Are you sure?' } %>
+					</td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
 	</div>
 </div>
 
@@ -12,13 +46,70 @@
 	<div class="medium-12 columns callout">
 		<h2 class="small-10 columns">List of Drivers</h2>
 		<%= link_to 'Add Driver', new_driver_path, class: "button small-2 columns" %>
-		<%= render partial: 'drivers/table',  locals: {drivers: current_carrier.drivers} %>
-	</div>
-</div>
+		<table>
+			<thead>
+				<tr>
+					<th>Driving License no.</th>
+					<!-- <th>Issue Date</th> -->
+					<th>Name</th>
+					<th>Phone</th>
+					<th>Email</th>
+					<!-- <th>Address</th> -->
+					<!-- <th>Date of Birth</th> -->
+					<th>Blood Group</th>
+					<!-- <th>Expiry Date</th> -->
+					<th>Actions</th>
+				</tr>
+			</thead>
 
-<div class="row">
-	<div class="medium-12 columns callout">
-		<h2 class="small-10 columns">List of Requests</h2>
-		<%= render partial: 'requests/table',  locals: {requests: current_carrier.requests} %>
+			<tbody>
+				<% @drivers.each do |driver| %>
+				<tr>
+					<td><%= driver.DL %></td>
+					<!-- <td><%= driver.DL_issue_date %></td> -->
+					<td><%= driver.name %></td>
+					<td><%= driver.phone %></td>
+					<td><%= driver.email %></td>
+					<!-- <td><%= driver.address %></td> -->
+					<!-- <td><%= driver.DOB %></td> -->
+					<td><%= driver.blood_group %></td>
+					<!-- <td><%= driver.DL_expiry %></td> -->
+					<td><%= link_to 'Show', driver %> |
+						<%= link_to 'Edit', edit_driver_path(driver) %> |
+						<%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
 	</div>
-</div>
+
+	<div class="row">
+		<div class="medium-12 columns callout">
+			<h2 class="small-10 columns">List of Requests</h2>
+			<table>
+				<tr>
+					<!-- <th>ID</th> -->
+					<th>Required date</th>
+					<!-- <th>Service level</th> -->
+					<th>Source</th>
+					<th>Destination</th>
+					<th>Shipper</th>
+					<th>Truck</th>
+					<th>Action</th>
+				</tr>
+
+				<% @requests.each do |request| %>
+				<tr>
+					<!-- <td><%= request.id %></td> -->
+					<td><%= request.reqd_date %></td>
+					<td><%= request.source %></td>
+					<td><%= request.destination %></td>
+					<td><%= link_to request.shipper_data.name, shipper_path(request.shipper_data) %></td>
+					<td><%= link_to request.truck_data.registration_num, truck_path(request.truck_data) %></td>
+					<td><%= link_to 'Show', request_path(request) %></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>

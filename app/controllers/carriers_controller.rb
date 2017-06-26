@@ -15,6 +15,9 @@ class CarriersController < ApplicationController
   end
 
   def dashboard
+    @trucks   = current_carrier.trucks
+    @drivers  = current_carrier.drivers
+    @requests = current_carrier.requests
   end
 
   # GET /carriers/new

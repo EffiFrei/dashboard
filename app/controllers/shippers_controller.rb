@@ -15,7 +15,7 @@ class ShippersController < ApplicationController
   end
 
   def dashboard
-    @requests = Request.all
+    @requests = current_shipper.requests
   end
 
   # GET /shippers/new

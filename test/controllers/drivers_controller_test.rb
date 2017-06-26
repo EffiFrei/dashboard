@@ -6,12 +6,16 @@ class DriversControllerTest < ActionDispatch::IntegrationTest
     @admin = FactoryGirl.create(:admin)
   end
 
-  test "should get index" do
+  # ====== INDEX =======
+  test "should get index when logged in as admin" do
+    login_as(@admin, :scope => :admin)
     get drivers_url
     assert_response :success
   end
 
-  test "should get new" do
+  # ====== NEW =======
+  test "should get new when logged in as admin" do
+    login_as(@admin, :scope => :admin)
     get new_driver_url
     assert_response :success
   end
@@ -24,12 +28,16 @@ class DriversControllerTest < ActionDispatch::IntegrationTest
   #   assert_redirected_to driver_url(Driver.last)
   # end
 
-  test "should show driver" do
+  # ====== SHOW =======
+  test "should show driver when logged in as admin" do
+    login_as(@admin, :scope => :admin)
     get driver_url(@driver)
     assert_response :success
   end
 
-  test "should get edit" do
+  # ====== EDIT =======
+  test "should get edit when logged in as admin" do
+    login_as(@admin, :scope => :admin)
     get edit_driver_url(@driver)
     assert_response :success
   end
@@ -39,7 +47,8 @@ class DriversControllerTest < ActionDispatch::IntegrationTest
   #   assert_redirected_to driver_url(@driver)
   # end
 
-  test "should destroy driver" do
+  # ====== DELETE =======
+  test "should destroy driver when logged in as admin" do
     login_as(@admin, :scope => :admin)
     assert_difference('Driver.count', -1) do
       delete driver_url(@driver)

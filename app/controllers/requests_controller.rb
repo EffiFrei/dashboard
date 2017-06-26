@@ -5,7 +5,15 @@ class RequestsController < ApplicationController
   before_action :logged_in_admin, only: [:destroy]
 
   def index
-    @requests = Request.all
+    if admin_signed_in?
+      @requests = Request.all
+    elsif carrier_signed_in?
+      @requests = current_carrier.requests
+    elsif shipper_signed_in?
+      @requests = current_shipper.requests
+    elsif driver_signed_in?
+      @requests = current_driver.truck.requests
+    end
   end
 
   def create

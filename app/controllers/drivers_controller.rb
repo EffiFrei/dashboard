@@ -5,7 +5,11 @@ class DriversController < ApplicationController
   # GET /drivers
   # GET /drivers.json
   def index
-    @drivers = Driver.all
+    if admin_signed_in?
+      @drivers = Driver.all
+    elsif carrier_signed_in?
+      @drivers = current_carrier.drivers
+    end
   end
 
   # GET /drivers/1

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   devise_for :drivers
   
   resources :shippers
-  get 'shipper_dash', to: 'shippers#dashboard'
+  get 'shipper/dashboard', to: 'shippers#dashboard', as: 'shipper_dash'
   
   devise_for :carriers
   resources :carriers

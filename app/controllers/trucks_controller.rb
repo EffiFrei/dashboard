@@ -1,12 +1,16 @@
 class TrucksController < ApplicationController
   before_action :set_truck, only: [:show, :edit, :update, :destroy]
-  before_action :admin_carrier_driver, only: [:index, :show]
-  before_action :admin_carrier, only: [:edit, :update, :create, :new, :destroy]
+  before_action :admin_carrier_driver, only: [:show]
+  before_action :admin_carrier, only: [:index, :edit, :update, :create, :new, :destroy]
 
   # GET /trucks
   # GET /trucks.json
   def index
-    @trucks = Truck.all
+    if admin_signed_in?
+      @trucks = Truck.all
+    elsif carrier_signed_in?
+      @trucks = current_carrier.trucks
+    end
   end
 
   # GET /trucks/1

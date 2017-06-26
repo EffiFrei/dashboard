@@ -23,10 +23,10 @@ class TrucksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get index when logged in as driver" do
+  test "should not get index when logged in as driver" do
     login_as(@driver, :scope => :driver)
     get trucks_path
-    assert_response :success
+    assert_redirected_to driver_path(@driver)
   end
 
   test "should not get index when logged in as shipper" do
